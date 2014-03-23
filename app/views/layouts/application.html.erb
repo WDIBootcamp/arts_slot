@@ -8,12 +8,6 @@
 
 </head>
 <body>
-  <div ng-controller="ProjectsCtrl">
-    <div ng-repeat="project in allProjects">
-      {{project}}
-    </div>
-  </div>
-  <%= yield %>
-
+  <div ng-view></div>
 </body>
 </html>
