@@ -1,6 +1,6 @@
-angular.module("ProjectsService", ["ngResource"])
+angular.module("projectsService", ["ngResource"])
 
-    .factory "ProjectRes", [
+    .factory "projectRes", [
         "$resource"
         ($resource)->
             return $resource("/projects/:id.json", id: "@id",

@@ -16,7 +16,7 @@
 //= require angular-1.2.13/angular.min
 //= require angular-1.2.13/angular-route.min
 //= require angular-1.2.13/angular-resource.min
-//= require artslot_app
+//= require artslotApp
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
