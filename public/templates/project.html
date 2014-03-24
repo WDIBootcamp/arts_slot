@@ -1,12 +1,27 @@
-<form ng-submit="saveProject()">
-  <input type="text" ng-model="project.name" placeholder="name">
-  <input type="text" ng-model="project.location" placeholder="location">
-  <input type="text" ng-model="project.description" placeholder="description">
-  <button class="btn btn-primary">start adding characters</button>
-</form>
+<div ng-controller="projectsCtrl">
+  <form ng-submit="saveProject()">
+    <input type="text" ng-model="project.name" placeholder="name">
+    <input type="text" ng-model="project.location" placeholder="location">
+    <input type="text" ng-model="project.description" placeholder="description">
+  </form>
 
-<div ng-model="project">
-    <li>Title: {{project.name}}
-    <li>Location: {{project.location}}
-    <li>Description: {{project.description}}
+  <div ng-model="project">
+      <li>Title: {{project.name}}
+      <li>Location: {{project.location}}
+      <li>Description: {{project.description}}
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+
+
+<div ng-controller="charactersCtrl">
+  Characters:
+  <br>
+  <button ng-click="test()" class="btn btn-primary">+</button>
+  <div ng-repeat="character in allCharacters">
+    <p>{{character.name}}</p>
+  </div>
 </div>
