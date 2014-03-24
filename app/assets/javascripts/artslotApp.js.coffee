@@ -24,10 +24,10 @@ angular.module('projectRouter', [
     ($routeProvider) ->
 
       $routeProvider.when("/",
-        templateUrl: "/projects/new"
+        templateUrl: "../templates/project.html"
         controller: "projectsCtrl"
       ).when("/projects",
-        templateUrl: "/projects"
+        templateUrl: "/templates/all_projects.html"
         controller: "projectsCtrl"
       )
 ])

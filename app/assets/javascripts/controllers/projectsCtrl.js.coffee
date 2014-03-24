@@ -10,6 +10,7 @@ angular.module("artSlotAppCtrls")
             $scope.allProjects = data;
             )
 
-        newProject = projectRes.save($scope.project)
-        $scope.allProjects.push(newProject)
+        $scope.saveProject = ->
+          newProject = projectRes.save($scope.project)
+          $scope.allProjects.push(newProject)
   ])
