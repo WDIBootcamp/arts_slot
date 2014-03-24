@@ -1,0 +1,12 @@
+<form ng-submit="saveProject()">
+  <input type="text" ng-model="project.name" placeholder="name">
+  <input type="text" ng-model="project.location" placeholder="location">
+  <input type="text" ng-model="project.description" placeholder="description">
+  <button class="btn btn-primary">start adding characters</button>
+</form>
+
+<div ng-model="project">
+    <li>Title: {{project.title}}
+    <li>Location: {{project.location}}
+    <li>Description: {{project.description}}
+</div>
