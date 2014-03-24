@@ -1,7 +1,7 @@
-ArtSlotApp = angular.module("ArtSlotApp", [
-  "ArtSlotAppCtrls", "ProjectRouter", "ProjectsService"
+artSlotApp = angular.module("artSlotApp", [
+  "artSlotAppCtrls", "projectRouter", "projectsService"
 ])
 
-ArtSlotAppCtrls = angular.module("ArtSlotAppCtrls", [])
-ProjectRouter = angular.module("ProjectRouter", ["rgRoute"])
-ProjectsService = angular.module("ProjectsService", ["ngResource"])
+artSlotAppCtrls = angular.module("artSlotAppCtrls", [])
+projectRouter = angular.module("projectRouter", ["rgRoute"])
+projectsService = angular.module("projectsService", ["ngResource"])

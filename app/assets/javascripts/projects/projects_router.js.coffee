@@ -1,4 +1,4 @@
-angular.module('ProjectRouter', [
+angular.module('projectRouter', [
   'ngRoute'
 ])
 

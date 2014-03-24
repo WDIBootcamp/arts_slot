@@ -1,5 +1,5 @@
 
-angular.module("ArtSlotAppCtrls").controller("ProjectsCtrl", [
+artSlotAppCtrls.controller("projectsCtrl", [
   "$scope", "$http", "ProjectRes"
     ($scope, $http, ProjectRes) ->
 
