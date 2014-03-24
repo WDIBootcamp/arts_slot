@@ -12,8 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require angular-1.2.13/angular.min
 //= require angular-1.2.13/angular-route.min
 //= require angular-1.2.13/angular-resource.min
-//= require turbolinks
+//= require artslotApp
 //= require_tree .
+
+$(function(){ $(document).foundation(); });

@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html ng-app="ArtSlotApp">
-<head>
-  <title>CastingSlotMachine</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-</head>
-<body>
-  <div ng-view></div>
-</body>
+    <title>Artslot</title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body ng-app="artSlotApp">
+
+    <div ng-view></div>
+    <%= javascript_include_tag "application" %>
+
+  </body>
 </html>

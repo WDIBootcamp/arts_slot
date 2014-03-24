@@ -31,7 +31,29 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem "factory_girl_rails", "~> 4.2.1"
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'better_errors'
+  gem 'quiet_assets'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+  gem 'awesome_print'
+  gem 'dotenv-rails'
+  gem 'guard-rspec'
+end
+
+gem "underscore-rails", "~> 1.6.0"
+
+gem 'ng-rails-csrf'
+
 gem 'devise'
+
+gem 'foundation-rails'
+
 
 
 # Use ActiveModel has_secure_password
