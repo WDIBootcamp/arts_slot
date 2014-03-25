@@ -1,4 +1,13 @@
-<div>hottest actors in the game</div>
-<div ng-repeat="actors in allActors">
-  {{actor.name}}
+<div ng-controller="usersCtrl">
+  hottest actors in the game
+
+<div ng-repeat="user in allUsers">
+  <h3>{{user.name}}</h3>
+    <li>{{user.career}}</li>
+    <li>{{user.gender}}</li>
+    <li>{{user.hair_color}}</li>
+    <li>{{user.height}}</li>
+    <li>{{user.weight}}</li>
+</div>
+
 </div>
