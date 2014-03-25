@@ -3,16 +3,9 @@ angular.module("artSlotAppCtrls")
     "$scope", "$http", "characterRes", "$routeParams"
       ($scope, $http, characterRes, $routeParams) ->
 
-        $scope.projectId = $routeParams.id
-
-        characterRes.query({project_id: $scope.projectId}, (data)->
+        characterRes.query({project_id: $routeParams.id}, (data)->
             $scope.characters = data;
         )
-
-        # $scope.newCharacter = ->
-        #   $scope.character = {}
-        #   character = new projectRes($scope.project)
-        #   newProject = project.$save ->
 
         $scope.saveCharacter = ->
           $scope.character.project_id = $routeParams.id
@@ -20,13 +13,23 @@ angular.module("artSlotAppCtrls")
               #add the response to the characters' array
               $scope.characters.push(response);
 
+          $scope.suggestions = $scope.suggestActors(
+            $routeParams.id
+            $scope.character.id
+          )
+
           #empty the character's form on the view
           $scope.character = {}
+
           )
 
         # $scope.gender = [
         #   {name: "male"}
         #   {name: "female"}
         # ]
+
+        $scope.suggestActors = (project_id, character_id)->
+
+
 
   ])
