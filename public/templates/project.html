@@ -1,9 +1,6 @@
   <div class="row">
     <div class="small-12 large-12 columns">
 
-
-
-
     <div ng-controller="projectsCtrl">
 
         <center><h1>{{project.name}}</h1></center>
@@ -26,33 +23,26 @@
     <br>
     <br>
 
+<div ng-controller="charactersCtrl">
 
-    <div ng-controller="charactersCtrl">
-      Characters:
-      <br>
-      <button ng-click="new_character()" class="btn btn-primary">+</button>
-      <div ng-repeat="character in allCharacters">
-        <p>{{character.name}}</p>
-      </div>
+  <!-- Iterate over the characters -->
+  <div ng-repeat="character in characters">
+  <p>{{character.name}}</p>
+  </div>
 
+  Characters:
+  <br>
+  <form ng-submit="saveCharacter()" ng-init="character={}">
+    <input type="text" ng-model="character.name" placeholder="name">
+    <input type="text" ng-model="character.age" placeholder="age">
+    <input type="text" ng-model="character.height" placeholder="height">
+    <input type="text" ng-model="character.weight" placeholder="weight">
+    <input type="text" ng-model="character.eye_color" placeholder="eye color">
+    <input type="text" ng-model="character.hair_color" placeholder="hair color">
+    <input type="text" ng-model="character.gender" placeholder="gender">
+    <button class="btn btn-primary">add the character</button>
+  </form>
 
-      <form ng-submit="saveCharacter()">
-        <input type="text" ng-model="character.name" placeholder="name">
-        <input type="text" ng-model="character.age" placeholder="age">
-        <input type="text" ng-model="character.height" placeholder="height">
-        <input type="text" ng-model="character.weight" placeholder="weight">
-        <input type="text" ng-model="character.eye_color" placeholder="eye color">
-        <input type="text" ng-model="character.hair_color" placeholder="hair color">
-        <input type="text" ng-model="character.gender" placeholder="gender">
-        <button class="btn btn-primary">character submit</button>
-      </form>
-
-
-    <!--   <span class="nullable">
-        <select ng-model="color" ng-options="c.name for c in colors">
-          <option value="">-- choose color --</option>
-        </select>
-      </span> -->
 
     </div>
   </div>

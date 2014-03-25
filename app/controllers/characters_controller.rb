@@ -3,7 +3,7 @@ class CharactersController < ApplicationController
   def index
     respond_to do |f|
       f.html  {render :layout => false }
-      f.json  {render :json => Character.all}
+      f.json  {render :json => Project.find(params[:project_id]).characters}
     end
   end
 
@@ -16,12 +16,11 @@ class CharactersController < ApplicationController
 
   def create
     project = Project.find(params[:project_id])
-    new_character = params.require(:character).permit(:name, :age, :height, :weight, :eye_color, :hair_color, :gender, :project_id = project)
-    project.characters.create(new_character)
-    binding.pry
+    new_character = params.require(:character).permit(:name, :age, :height, :weight, :eye_color, :hair_color, :gender, :project_id)
+    character = project.characters.create(new_character)
     respond_to do |f|
-        f.html {redirect_to projects_path}
-        f.json {render json: project }
+        f.html {render nothing: true}
+        f.json {render json: character, status: 201 }
     end
   end
 

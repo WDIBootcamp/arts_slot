@@ -3,12 +3,14 @@ angular.module("artSlotAppCtrls")
     "$scope", "$http", "projectRes", "$location", "$routeParams"
       ($scope, $http, projectRes, $location, $routeParams) ->
 
-        $scope.allProjects = []
+
+        $scope.projects = []
 
         projectRes.query((data) ->
             console.log(data);
-            $scope.allProjects = data;
+            $scope.projects = data;
             )
+
 
         $scope.createProject = ->
           $scope.project = {}
