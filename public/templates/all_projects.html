@@ -1,4 +1,14 @@
-<div>This is the Project Index:</div>
-<div ng-repeat="project in allProjects">
-  {{project.name}}
+<div class="row">
+  <div class="small-12 large-12 columns">
+    <br>
+    <div>Movies near </div>
+    <br>
+    <div ng-repeat="project in allProjects">
+
+      <div class="panel">
+        <a href="/#/projects/{{project.id}}"><h5> {{project.name}}</h5></a>
+        <p>Casting for [  ] characters</p>
+      </div>
+    </div>
+  </div>
 </div>

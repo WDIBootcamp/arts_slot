@@ -1,5 +1,4 @@
 <div ng-controller="usersCtrl">
-  hottest actors in the game
 
   <br>
 
@@ -9,6 +8,9 @@
   <input ng-model="search.height" placeholder="height">
   <input ng-model="search.weight" placeholder="weight">
 
+  <br>
+  <br>
+
   <table>
     <tr ng-repeat="user in allUsers | filter:{name: search.name, gender: search.gender, hair_color: search.hair_color, height: search.height, weight: search.weight}" >
         <td>{{user.name}}</td>
@@ -17,6 +19,7 @@
         <td>{{user.hair_color}}</td>
         <td>{{user.height}}</td>
         <td>{{user.weight}}</td>
+        <td><a href="#" class="button small">Default Button</a></td>
     </tr>
   </table>
 
