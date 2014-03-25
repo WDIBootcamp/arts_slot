@@ -19,11 +19,14 @@ class ProjectsController < ApplicationController
     project = Project.create(name: "newest Movie")
     respond_to do |f|
         f.html {redirect_to projects_path}
-        f.json {render json: project }
+        f.json {render json: project, status: 201 }
     end
   end
 
   def update
+    Project.find(params[:id]).update_attributes(params.require(:project).permit(:name, :location, :description))
+
+    render nothing: true, status: 200
   end
 
   def delete

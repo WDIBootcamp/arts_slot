@@ -16,4 +16,11 @@ angular.module("artSlotAppCtrls")
           newProject = project.$save ->
               $location.path("/projects/"+project.id)
 
+        $scope.updateProject = ->
+          console.log $scope.project
+          $scope.project.id = $routeParams.id
+
+          console.log  projectRes.update($scope.project)
+
+
   ])
