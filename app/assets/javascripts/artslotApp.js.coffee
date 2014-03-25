@@ -37,5 +37,8 @@ angular.module('projectRouter', [
       ).when("/projects",
         templateUrl: "/templates/all_projects.html"
         controller: "projectsCtrl"
+      ).when("/actors",
+        templateUrl: "/templates/all_users.html"
+        controller: "usersCtrl"
       )
 ])
