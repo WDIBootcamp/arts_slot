@@ -1,4 +1,6 @@
-<div>This is the Project Index:</div>
-<div ng-repeat="project in allProjects">
-  {{project.name}}
+<div ng-controller="allProjectsCtrl">
+  <div>This is the Project Index:</div>
+  <div ng-repeat="project in projects">
+    {{project.name}}
+  </div>
 </div>

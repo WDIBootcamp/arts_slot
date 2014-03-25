@@ -18,17 +18,17 @@
 <br>
 <br>
 
-
 <div ng-controller="charactersCtrl">
-  Characters:
-  <br>
-  <button ng-click="new_character()" class="btn btn-primary">+</button>
-  <div ng-repeat="character in allCharacters">
-    <p>{{character.name}}</p>
+
+  <!-- Iterate over the characters -->
+  <div ng-repeat="character in characters">
+  <p>{{character.name}}</p>
   </div>
 
-
-  <form ng-submit="saveCharacter()">
+  Characters:
+  <br>
+<!--   <button ng-click="newCharacter()" class="btn btn-primary">+</button> -->
+  <form ng-submit="saveCharacter()" ng-init="character={}">
     <input type="text" ng-model="character.name" placeholder="name">
     <input type="text" ng-model="character.age" placeholder="age">
     <input type="text" ng-model="character.height" placeholder="height">
@@ -36,7 +36,7 @@
     <input type="text" ng-model="character.eye_color" placeholder="eye color">
     <input type="text" ng-model="character.hair_color" placeholder="hair color">
     <input type="text" ng-model="character.gender" placeholder="gender">
-    <button class="btn btn-primary">character submit</button>
+    <button class="btn btn-primary">add the character</button>
   </form>
 
 

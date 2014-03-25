@@ -3,13 +3,6 @@ angular.module("artSlotAppCtrls")
     "$scope", "$http", "projectRes", "$location", "$routeParams"
       ($scope, $http, projectRes, $location, $routeParams) ->
 
-        # $scope.allProjects = []
-        #
-        # projectRes.query((data) ->
-        #     console.log(data);
-        #     $scope.allProjects = data;
-        #     )
-
         $scope.createProject = ->
           $scope.project = {}
           project = new projectRes($scope.project)
@@ -22,5 +15,18 @@ angular.module("artSlotAppCtrls")
 
           console.log  projectRes.update($scope.project)
 
+
+  ])
+
+  .controller("allProjectsCtrl", [
+    "$scope", "projectRes"
+      ($scope, projectRes) ->
+
+        $scope.projects = []
+
+        projectRes.query((data) ->
+            console.log(data);
+            $scope.projects = data;
+            )
 
   ])
