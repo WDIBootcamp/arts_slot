@@ -17,9 +17,8 @@
 
       <table>
         <tr ng-repeat="user in allUsers | filter:{name: search.name, gender: search.gender, hair_color: search.hair_color, height: search.height, weight: search.weight}" >
-            <td><img class="actor_pic_table" src="http://i.huffpost.com/gen/920563/thumbs/o-BEST-ACTOR-GOLDEN-GLOBES-facebook.jpg"></td>
+            <td><img class="actor_pic_table" src="{{user.img}}"></td>
             <td>{{user.name}}</td>
-            <td>{{user.career}}</td>
             <td>{{user.gender}}</td>
             <td>{{user.hair_color}}</td>
             <td>{{user.height}}</td>
