@@ -1,26 +1,45 @@
-<div ng-controller="usersCtrl">
+<div class="row">
+  <div class="small-12 large-12 columns">
 
-  <br>
+    <div ng-controller="usersCtrl">
 
-  <input ng-model="search.name" placeholder="name">
-  <input ng-model="search.gender" placeholder="gender">
-  <input ng-model="search.hair_color" placeholder="hair_color">
-  <input ng-model="search.height" placeholder="height">
-  <input ng-model="search.weight" placeholder="weight">
+      <br>
 
-  <br>
-  <br>
 
-  <table>
-    <tr ng-repeat="user in allUsers | filter:{name: search.name, gender: search.gender, hair_color: search.hair_color, height: search.height, weight: search.weight}" >
-        <td>{{user.name}}</td>
-        <td>{{user.career}}</td>
-        <td>{{user.gender}}</td>
-        <td>{{user.hair_color}}</td>
-        <td>{{user.height}}</td>
-        <td>{{user.weight}}</td>
-        <td><a href="#" class="button small">Default Button</a></td>
-    </tr>
-  </table>
+      <input ng-model="search.name" placeholder="name">
+      <input ng-model="search.gender" placeholder="gender">
+      <input ng-model="search.hair_color" placeholder="hair_color">
+      <input ng-model="search.height" placeholder="height">
+      <input ng-model="search.weight" placeholder="weight">
 
+      <br>
+      <br>
+
+      <table>
+        <tr ng-repeat="user in allUsers | filter:{name: search.name, gender: search.gender, hair_color: search.hair_color, height: search.height, weight: search.weight}" >
+            <td><img class="actor_pic_table" src="http://i.huffpost.com/gen/920563/thumbs/o-BEST-ACTOR-GOLDEN-GLOBES-facebook.jpg"></td>
+            <td>{{user.name}}</td>
+            <td>{{user.career}}</td>
+            <td>{{user.gender}}</td>
+            <td>{{user.hair_color}}</td>
+            <td>{{user.height}}</td>
+            <td>{{user.weight}}</td>
+        </tr>
+      </table>
+
+    <div class="row" id="row_actors" data-equalizer>
+      <div ng-repeat="user in allUsers | filter:{name: search.name, gender: search.gender, hair_color: search.hair_color, height: search.height, weight: search.weight}">
+        <div id="actor_card" class="large-3 columns panel" data-equalizer-watch>
+          <img class="actor_pic" src="http://i.huffpost.com/gen/920563/thumbs/o-BEST-ACTOR-GOLDEN-GLOBES-facebook.jpg">
+          {{user.name}}
+          {{user.career}}
+          {{user.gender}}
+          {{user.hair_color}}
+          {{user.height}}
+          {{user.weight}}
+        </div>
+      </div>
+  </div>
+    </div>
+  </div>
 </div>

@@ -1,13 +1,20 @@
 <div class="row">
   <div class="small-12 large-12 columns">
+
     <br>
-    <div>Movies near </div>
+    <div>Movies near <input ng-model="search.location" placeholder="zip code"> </div>
     <br>
-    <div ng-repeat="project in allProjects">
+
+    <div ng-controller="projectsCtrl">
+        <button ng-click="createProject()"class="btn btn-primary">Start a Movie</button>
+    </div>
+
+    <div ng-repeat="project in allProjects | filter:{location: search.location}">
 
       <div class="panel">
-        <a href="/#/projects/{{project.id}}"><h5> {{project.name}}</h5></a>
+        <a href="/#/projects/{{project.id}}"><p> {{project.name}}</p></a>
         <p>Casting for [  ] characters</p>
+        <p>[  ] matching roles for you!</p>
       </div>
     </div>
   </div>
