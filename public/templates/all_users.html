@@ -1,15 +1,23 @@
 <div ng-controller="usersCtrl">
   hottest actors in the game
 
-<input ng-model="actorFilter">
+  <br>
 
-<div ng-repeat="user in allUsers | filter:actorFilter" >
-  <h3>{{user.name}}</h3>
-    <li>{{user.career}}</li>
-    <li>{{user.gender}}</li>
-    <li>{{user.hair_color}}</li>
-    <li>{{user.height}}</li>
-    <li>{{user.weight}}</li>
-</div>
+  <input ng-model="search.name" placeholder="name">
+  <input ng-model="search.gender" placeholder="gender">
+  <input ng-model="search.hair_color" placeholder="hair_color">
+  <input ng-model="search.height" placeholder="height">
+  <input ng-model="search.weight" placeholder="weight">
+
+  <table>
+    <tr ng-repeat="user in allUsers | filter:{name: search.name, gender: search.gender, hair_color: search.hair_color, height: search.height, weight: search.weight}" >
+        <td>{{user.name}}</td>
+        <td>{{user.career}}</td>
+        <td>{{user.gender}}</td>
+        <td>{{user.hair_color}}</td>
+        <td>{{user.height}}</td>
+        <td>{{user.weight}}</td>
+    </tr>
+  </table>
 
 </div>
