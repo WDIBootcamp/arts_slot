@@ -1,22 +1,27 @@
-<div ng-controller="projectsCtrl">
-  <form ng-submit="updateProject()"  ng-init="project={}">
-    <input type="text" ng-model="project.name" placeholder="name">
-    <input type="text" ng-model="project.location" placeholder="location">
-    <input type="text" ng-model="project.description" placeholder="description">
-    <button class="btn btn-primary">update</button>
-  </form>
+  <div class="row">
+    <div class="small-12 large-12 columns">
 
-  <div ng-model="project">
-      <li>Title: {{project.name}}
-      <li>Location: {{project.location}}
-      <li>Description: {{project.description}}
-      <li>Id: {{project.id}}
-  </div>
-</div>
+    <div ng-controller="projectsCtrl">
 
-<br>
-<br>
-<br>
+        <center><h1>{{project.name}}</h1></center>
+      <form ng-submit="updateProject()"  ng-init="project={}">
+        <input type="text" ng-model="project.name" placeholder="name">
+        <input type="text" ng-model="project.location" placeholder="location">
+        <input type="text" ng-model="project.description" placeholder="description">
+        <button class="btn btn-primary">update</button>
+      </form>
+
+      <div ng-model="project">
+          <li>Title: {{project.name}}
+          <li>Location: {{project.location}}
+          <li>Description: {{project.description}}
+          <li>Id: {{project.id}}
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
 
 <div ng-controller="charactersCtrl">
 
@@ -27,7 +32,6 @@
 
   Characters:
   <br>
-<!--   <button ng-click="newCharacter()" class="btn btn-primary">+</button> -->
   <form ng-submit="saveCharacter()" ng-init="character={}">
     <input type="text" ng-model="character.name" placeholder="name">
     <input type="text" ng-model="character.age" placeholder="age">
@@ -40,10 +44,6 @@
   </form>
 
 
-<!--   <span class="nullable">
-    <select ng-model="color" ng-options="c.name for c in colors">
-      <option value="">-- choose color --</option>
-    </select>
-  </span> -->
-
+    </div>
+  </div>
 </div>

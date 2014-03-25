@@ -1,6 +1,21 @@
-<div ng-controller="allProjectsCtrl">
-  <div>This is the Project Index:</div>
-  <div ng-repeat="project in projects">
-    {{project.name}}
+<div class="row">
+  <div class="small-12 large-12 columns">
+
+    <br>
+    <div>Movies near <input ng-model="search.location" placeholder="zip code"> </div>
+    <br>
+
+    <div ng-controller="projectsCtrl">
+        <button ng-click="createProject()"class="btn btn-primary">Start a Movie</button>
+    </div>
+
+    <div ng-repeat="project in projects | filter:{location: search.location}">
+
+      <div class="panel">
+        <a href="/#/projects/{{project.id}}"><p> {{project.name}}</p></a>
+        <p>Casting for [  ] characters</p>
+        <p>[  ] matching roles for you!</p>
+      </div>
+    </div>
   </div>
 </div>
