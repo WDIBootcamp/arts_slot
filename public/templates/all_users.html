@@ -1,7 +1,9 @@
 <div ng-controller="usersCtrl">
   hottest actors in the game
 
-<div ng-repeat="user in allUsers">
+<input ng-model="actorFilter">
+
+<div ng-repeat="user in allUsers | filter:actorFilter" >
   <h3>{{user.name}}</h3>
     <li>{{user.career}}</li>
     <li>{{user.gender}}</li>
