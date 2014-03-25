@@ -5,3 +5,18 @@
 .actor_pic_table {
   height: 170px;
 }
+
+
+.movie_footer {
+  position: fixed;
+  bottom: 0px;
+  background-color: blue;
+  width: 100%;
+
+}
+
+
+.project_field {
+  text-align: center;
+  font-size: 30px;
+}
