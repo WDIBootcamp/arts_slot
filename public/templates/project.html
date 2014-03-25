@@ -1,12 +1,49 @@
-<form ng-submit="saveProject()">
-  <input type="text" ng-model="project.name" placeholder="name">
-  <input type="text" ng-model="project.location" placeholder="location">
-  <input type="text" ng-model="project.description" placeholder="description">
-  <button class="btn btn-primary">start adding characters</button>
-</form>
+<div ng-controller="projectsCtrl">
+  <form ng-submit="updateProject()"  ng-init="project={}">
+    <input type="text" ng-model="project.name" placeholder="name">
+    <input type="text" ng-model="project.location" placeholder="location">
+    <input type="text" ng-model="project.description" placeholder="description">
+    <button class="btn btn-primary">update</button>
+  </form>
 
-<div ng-model="project">
-    <li>Title: {{project.name}}
-    <li>Location: {{project.location}}
-    <li>Description: {{project.description}}
+  <div ng-model="project">
+      <li>Title: {{project.name}}
+      <li>Location: {{project.location}}
+      <li>Description: {{project.description}}
+      <li>Id: {{project.id}}
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+
+
+<div ng-controller="charactersCtrl">
+  Characters:
+  <br>
+  <button ng-click="new_character()" class="btn btn-primary">+</button>
+  <div ng-repeat="character in allCharacters">
+    <p>{{character.name}}</p>
+  </div>
+
+
+  <form ng-submit="saveCharacter()">
+    <input type="text" ng-model="character.name" placeholder="name">
+    <input type="text" ng-model="character.age" placeholder="age">
+    <input type="text" ng-model="character.height" placeholder="height">
+    <input type="text" ng-model="character.weight" placeholder="weight">
+    <input type="text" ng-model="character.eye_color" placeholder="eye color">
+    <input type="text" ng-model="character.hair_color" placeholder="hair color">
+    <input type="text" ng-model="character.gender" placeholder="gender">
+    <button class="btn btn-primary">character submit</button>
+  </form>
+
+
+<!--   <span class="nullable">
+    <select ng-model="color" ng-options="c.name for c in colors">
+      <option value="">-- choose color --</option>
+    </select>
+  </span> -->
+
 </div>

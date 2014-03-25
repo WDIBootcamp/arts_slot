@@ -1,5 +1,8 @@
 CastingSlotMachine::Application.routes.draw do
   devise_for :users
   root to: "application#index"
-  resources :projects
+  resources :projects do
+    resource :characters
+  end
+  
 end

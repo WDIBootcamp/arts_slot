@@ -1,16 +1,26 @@
 angular.module("artSlotAppCtrls")
   .controller("projectsCtrl", [
-    "$scope", "$http", "projectRes"
-      ($scope, $http, projectRes) ->
+    "$scope", "$http", "projectRes", "$location", "$routeParams"
+      ($scope, $http, projectRes, $location, $routeParams) ->
 
-        $scope.allProjects = []
+        # $scope.allProjects = []
+        #
+        # projectRes.query((data) ->
+        #     console.log(data);
+        #     $scope.allProjects = data;
+        #     )
 
-        projectRes.query((data) ->
-            console.log(data);
-            $scope.allProjects = data;
-            )
+        $scope.createProject = ->
+          $scope.project = {}
+          project = new projectRes($scope.project)
+          newProject = project.$save ->
+              $location.path("/projects/"+project.id)
 
-        $scope.saveProject = ->
-          newProject = projectRes.save($scope.project)
-          $scope.allProjects.push(newProject)
+        $scope.updateProject = ->
+          console.log $scope.project
+          $scope.project.id = $routeParams.id
+
+          console.log  projectRes.update($scope.project)
+
+
   ])
