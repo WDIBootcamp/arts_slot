@@ -3,23 +3,28 @@ angular.module("artSlotAppCtrls")
     "$scope", "$http", "characterRes", "$routeParams"
       ($scope, $http, characterRes, $routeParams) ->
 
-        $scope.projectID = $routeParams.id
+        $scope.projectId = $routeParams.id
 
-        $scope.allCharacters = []
+        $scope.characters = characterRes.query(project_id: $scope.projectId)
 
-        characterRes.query((data) ->
-            console.log(data);
-            $scope.allCharacters = data;
-            )
+        # $scope.newCharacter = ->
+        #   $scope.character = {}
+        #   character = new projectRes($scope.project)
+        #   newProject = project.$save ->
 
         $scope.saveCharacter = ->
-          newCharacter = characterRes.save($scope.projectID, $scope.character)
-          $scope.allCharacters.push(newCharacter)
+          character = new characterRes($scope.character)
+          newCharacter = character.$save ((response)->
+              #add the response to the characters' array
+              $scope.characters.push(response);
 
-        $scope.gender = [
-          {name: "male"}
-          {name: "female"}
-        ]
+          #empty the character's form on the view
+          $scope.character = {}
+          )
 
+        # $scope.gender = [
+        #   {name: "male"}
+        #   {name: "female"}
+        # ]
 
   ])
