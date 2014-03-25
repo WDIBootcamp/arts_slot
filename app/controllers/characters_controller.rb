@@ -15,8 +15,10 @@ class CharactersController < ApplicationController
   end
 
   def create
-    new_character = params.require(:character).permit(:name, :age, :height, :weight, :eye_color, :hair_color, :gender)
-    character = Character.create(new_character)
+    project = Project.find(params[:project_id])
+    new_character = params.require(:character).permit(:name, :age, :height, :weight, :eye_color, :hair_color, :gender, :project_id = project)
+    project.characters.create(new_character)
+    binding.pry
     respond_to do |f|
         f.html {redirect_to projects_path}
         f.json {render json: project }

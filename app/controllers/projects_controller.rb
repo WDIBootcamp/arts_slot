@@ -15,8 +15,8 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    new_project = params.require(:project).permit(:name, :location, :description)
-    project = Project.create(new_project)
+    # new_project = params.require(:project).permit(:name => "new Movie", :location => "0", :description => "Romantic, indie, hip, action comedy")
+    project = Project.create(name: "newest Movie")
     respond_to do |f|
         f.html {redirect_to projects_path}
         f.json {render json: project }
