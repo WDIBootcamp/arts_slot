@@ -5,7 +5,9 @@ angular.module("artSlotAppCtrls")
 
         $scope.projectId = $routeParams.id
 
-        $scope.characters = characterRes.query(project_id: $scope.projectId)
+        characterRes.query({project_id: $scope.projectId}, (data)->
+            $scope.characters = data;
+        )
 
         # $scope.newCharacter = ->
         #   $scope.character = {}
@@ -13,8 +15,8 @@ angular.module("artSlotAppCtrls")
         #   newProject = project.$save ->
 
         $scope.saveCharacter = ->
-          character = new characterRes($scope.character)
-          newCharacter = character.$save ((response)->
+          $scope.character.project_id = $routeParams.id
+          characterRes.save($scope.character, (response)->
               #add the response to the characters' array
               $scope.characters.push(response);
 
