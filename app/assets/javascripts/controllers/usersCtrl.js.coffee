@@ -3,29 +3,20 @@ angular.module("artSlotAppCtrls")
     "$scope", "$http", "userRes", "$location", "$routeParams"
       ($scope, $http, userRes, $location, $routeParams) ->
 
-        $scope.allUsers = []
+        $scope.users = []
 
         userRes.query((data) ->
           console.log(data);
-          $scope.allUsers = $scope.allUsers.concat(data);
+          $scope.users = $scope.users.concat(data);
           )
 
-        # projectRes.query((data) ->
-        #     console.log(data);
-        #     $scope.allProjects = data;
-        #     )
-
-        # $scope.createProject = ->
-        #   $scope.project = {}
-        #   project = new projectRes($scope.project)
-        #   newProject = project.$save ->
-        #       $location.path("/projects/"+project.id)
-        #
-        # $scope.updateProject = ->
-        #   console.log $scope.project
-        #   $scope.project.id = $routeParams.id
-        #
-        #   console.log  projectRes.update($scope.project)
-
+        $http({
+          method: "get",
+          url: "/users.json",
+          data: $scope.user,
+          headers: {
+            'X-CSRF-Token': $('meta[name=csrf-token]').attr('content')
+          }
+        })
 
   ])
