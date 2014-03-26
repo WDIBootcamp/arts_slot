@@ -59,3 +59,8 @@
   border-radius: 75px 75px 0 75px;
   border: 1px solid black;
 }
+
+.suggest_preview_text {
+  margin-top: 30px;
+  margin-left: 25px;
+}
