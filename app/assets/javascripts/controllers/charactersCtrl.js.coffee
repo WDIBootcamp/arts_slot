@@ -37,4 +37,20 @@ angular.module("artSlotAppCtrls")
             $scope.suggestions = suggestions
             console.log "Sugs:" + angular.toJson $scope.suggestions
 
-  ])
+])
+
+angular.module("artSlotAppCtrls")
+  .controller("characterDetailsCtrl", [
+    "$scope", "$routeParams", "$http"
+      ($scope, $routeParams, $http) ->
+            $scope.characterId = $routeParams.id
+
+            $scope.character = null
+
+            $http.get("/characters/"+$scope.characterId+".json").
+                success((data) ->
+                    console.log(data);
+                    $scope.character = data;
+              )
+
+])

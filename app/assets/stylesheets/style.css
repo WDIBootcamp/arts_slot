@@ -45,7 +45,8 @@
 
 #character_panel {
   background-color : transparent;
-  border: 1px solid black;
+
+  border: none;
 }
 
 #new_char_form {
@@ -58,9 +59,15 @@
   height: 150px;
   border-radius: 75px 75px 0 75px;
   border: 1px solid black;
+  padding-top: 50px;
+  padding-left: 50px;
 }
 
 .suggest_preview_text {
   margin-top: 30px;
   margin-left: 25px;
+}
+
+.char_name {
+  margin-top: 30px;
 }
