@@ -7,16 +7,47 @@
 }
 
 
-.movie_footer {
-  position: fixed;
-  bottom: 0px;
-  background-color: blue;
-  width: 100%;
+#project_field_title {
+  text-align: left;
+  font-size: 35px;
+  height: 60px;
+  border: 0px;
+  box-shadow: none;
+/*  text-decoration:underline;*/
 
 }
 
+#project_field_data {
+  text-align: left;
+  font-size: 18px;
+  height: 30px;
+  border: 0px;
+  box-shadow: none;
+}
 
-.project_field {
+#new_char_button {
+  background-color: white;
+/*  border: 1px solid black;*/
+  color: black;
+  letter-spacing:10px
+}
+
+#char_name {
   text-align: center;
-  font-size: 30px;
+}
+
+.add_character {
+
+/*  background-color: rgba(22, 160, 133,.5);*/
+  padding: 10px;
+  border: .5px solid black;
+}
+
+#character_panel {
+  background-color : transparent;
+}
+
+#new_char_form {
+  border: 1px solid black;
+  padding: 15px;
 }

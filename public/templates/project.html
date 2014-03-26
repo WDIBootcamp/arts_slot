@@ -1,67 +1,90 @@
   <div class="row">
-    <div class="small-12 large-12 columns">
+    <div class="small-3 large-3 columns">
 
-    <div ng-controller="projectsCtrl">
-
-      <center><h1>{{project.name}}</h1></center>
-      <form ng-submit="updateProject()"  ng-init="project={}">
-        <input type="text" ng-model="project.name" placeholder="name">
-        <input type="text" ng-model="project.location" placeholder="location">
-        <input type="text" ng-model="project.description" placeholder="description">
-        <button class="btn btn-primary">update</button>
-      </form>
-
-      <div ng-model="project">
-          <li>Title: {{project.name}}
-          <li>Location: {{project.location}}
-          <li>Description: {{project.description}}
-          <li>Id: {{project.id}}
-      </div>
-    </div>
-
-    <br>
-    <br>
-    <br>
-
-
-
-<div ng-controller="charactersCtrl">
-
-  <!-- Iterate over the characters -->
-  <div ng-repeat="character in characters">
-    <p>{{character.name}} | {{character.age}}</p>
-    <p>Actor Suggestions:
-    <div ng-repeat="sug in character.suggestions">
-      <p>{{sug.name}} | {{sug.age}}</p>
-    </div>
-  <hr>
-  </div>
-
-    <div ng-controller="charactersCtrl">
-      Characters:
-      <div ng-repeat="character in characters">
-      <p>{{character.name}}</p>
-      </div>
-
-      <br>
-      <div class="movie_footer">
-        <div class="row">
-          <form ng-submit="saveCharacter()" ng-init="character={}">
-            <div class="small-12 large-12 columns">
-
-            </div>
-            <input type="text" ng-model="character.name" placeholder="name">
-            <input type="text" ng-model="character.age" placeholder="age">
-            <input type="text" ng-model="character.height" placeholder="height">
-            <input type="text" ng-model="character.weight" placeholder="weight">
-            <input type="text" ng-model="character.eye_color" placeholder="eye color">
-            <input type="text" ng-model="character.hair_color" placeholder="hair color">
-            <input type="text" ng-model="character.gender" placeholder="gender">
-            <button class="btn btn-primary">add the character</button>
+        <div ng-controller="projectsCtrl">
+          <form ng-submit="updateProject()"  ng-init="project={}">
+            <input id="project_field_title" type="text" ng-model="project.name" placeholder="name">
+            <input id="project_field_data" type="text" ng-model="project.location" placeholder="location">
+            <input id="project_field_data" type="text" ng-model="project.description" placeholder="description">
           </form>
         </div>
-      </div>
+
     </div>
+
+    <div class="small-9 large-9 columns">
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+
+
+
+
+
+
+    <div ng-controller="charactersCtrl">
+            <div ng-repeat="character in characters">
+
+              <div class="panel" id="character_panel">
+                  <h3>{{character.name}}</h3>
+
+                  <div class="row">
+                    <div class="large-4 columns">
+                      <p>{{character.age}} years old </p>
+                    </div>
+                    <div class="large-4 columns">
+                      <p>{{character.gender}}</p>
+                    </div>
+                    <div class="large-4 columns">
+                      <p>{{character.height}} feet tall</p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="large-4 columns">
+                      <p>{{character.weight}} pounds</p>
+                    </div>
+                    <div class="large-4 columns">
+                      <p>{{character.eye_color}} eyes</p>
+                    </div>
+                    <div class="large-4 columns">
+                      <p>{{character.hair_color}} hair</p>
+                    </div>
+                  </div>
+
+              </div>
+            </div>
+
+      <br>
+
+
+      <div class="panel" id="character_panel">
+
+          Add a Character
+
+          <br>
+          <br>
+        <form ng-submit="saveCharacter()" ng-init="character={}">
+          <div class="small-12 large-12 columns">
+
+          </div>
+          <input type="text" ng-model="character.name" placeholder="name">
+          <input type="text" ng-model="character.age" placeholder="age">
+          <input type="text" ng-model="character.gender" placeholder="gender">
+          <button class="btn btn-primary">--></button>
+        </form>
+      </div>
+
+
+
+    </div>
+
+  </div>
 
 
   </div>
