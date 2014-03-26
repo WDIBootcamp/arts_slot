@@ -44,6 +44,8 @@ group :development, :test do
   gem 'awesome_print'
   gem 'dotenv-rails'
   gem 'guard-rspec'
+  gem 'jasmine-rails'
+
 end
 
 gem "underscore-rails", "~> 1.6.0"

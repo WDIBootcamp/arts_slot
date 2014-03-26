@@ -1,4 +1,5 @@
 CastingSlotMachine::Application.routes.draw do
+  mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   devise_for :users
   root to: "application#index"
   resources :projects do

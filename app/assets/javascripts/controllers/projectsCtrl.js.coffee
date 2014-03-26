@@ -11,7 +11,6 @@ angular.module("artSlotAppCtrls")
             $scope.projects = data;
             )
 
-
         $scope.createProject = ->
           $scope.project = {}
           project = new projectRes($scope.project)
@@ -21,7 +20,6 @@ angular.module("artSlotAppCtrls")
         $scope.updateProject = ->
           console.log $scope.project
           $scope.project.id = $routeParams.id
-
           console.log  projectRes.update($scope.project)
 
 
