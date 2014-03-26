@@ -3,7 +3,7 @@
 
     <div ng-controller="projectsCtrl">
 
-        <center><h1>{{project.name}}</h1></center>
+      <center><h1>{{project.name}}</h1></center>
       <form ng-submit="updateProject()"  ng-init="project={}">
         <input type="text" ng-model="project.name" placeholder="name">
         <input type="text" ng-model="project.location" placeholder="location">
@@ -23,11 +23,17 @@
     <br>
     <br>
 
+
 <div ng-controller="charactersCtrl">
 
   <!-- Iterate over the characters -->
   <div ng-repeat="character in characters">
-  <p>{{character.name}}</p>
+    <p>{{character.name}} | {{character.age}}</p>
+    <p>Actor Suggestions:
+    <div ng-repeat="sug in character.suggestions">
+      <p>{{sug.name}} | {{sug.age}}</p>
+    </div>
+  <hr>
   </div>
 
   Characters:

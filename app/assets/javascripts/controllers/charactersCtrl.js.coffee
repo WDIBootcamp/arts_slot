@@ -1,7 +1,7 @@
 angular.module("artSlotAppCtrls")
   .controller("charactersCtrl", [
-    "$scope", "$http", "characterRes", "$routeParams"
-      ($scope, $http, characterRes, $routeParams) ->
+    "$scope", "$http", "characterRes", "$routeParams", "userRes"
+      ($scope, $http, characterRes, $routeParams, userRes) ->
 
         $scope.projectId = $routeParams.id
 
@@ -9,13 +9,9 @@ angular.module("artSlotAppCtrls")
             $scope.characters = data;
         )
 
-        # $scope.newCharacter = ->
-        #   $scope.character = {}
-        #   character = new projectRes($scope.project)
-        #   newProject = project.$save ->
-
         $scope.saveCharacter = ->
           $scope.character.project_id = $routeParams.id
+          $scope.suggestActors($scope.character)
           characterRes.save($scope.character, (response)->
               #add the response to the characters' array
               $scope.characters.push(response);
@@ -24,9 +20,21 @@ angular.module("artSlotAppCtrls")
           $scope.character = {}
           )
 
-        # $scope.gender = [
-        #   {name: "male"}
-        #   {name: "female"}
-        # ]
+        $scope.suggestActors = (character) ->
+          # this doesn't seem to be working. if any of the
+          #attributes are left blank, the response is undefined
+          #and therefore returns all of the users.
+          result = userRes.query {
+            career: "actor"
+            age: character.age
+            height: character.height
+            weight: character.weight
+            eye_color: character.eye_color
+            hair_color: character.hair_color
+            gender: character.gender
+          }
+          result.$promise.then (suggestions) ->
+            $scope.suggestions = suggestions
+            console.log "Sugs:" + angular.toJson $scope.suggestions
 
   ])
