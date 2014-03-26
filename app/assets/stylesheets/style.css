@@ -45,9 +45,17 @@
 
 #character_panel {
   background-color : transparent;
+  border: 1px solid black;
 }
 
 #new_char_form {
   border: 1px solid black;
   padding: 15px;
+}
+
+.num_of_suggestions {
+  width: 150px;
+  height: 150px;
+  border-radius: 75px 75px 0 75px;
+  border: 1px solid black;
 }
