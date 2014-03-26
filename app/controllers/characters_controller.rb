@@ -2,15 +2,17 @@ class CharactersController < ApplicationController
 
   def index
     characters = Project.find(params[:project_id]).characters
-    characters.map! do |character|
+    new_characters = []
+    characters.map do |character|
       actor_suggestions = suggestions(character)
       character = character.to_hash()
       character["suggestions"] = actor_suggestions
+      new_characters << character
     end
     binding.pry
     respond_to do |f|
       f.html  {render :layout => false }
-      f.json  {render :json => characters }
+      f.json  {render :json => new_characters }
     end
   end
 
