@@ -4,12 +4,11 @@ class CharactersController < ApplicationController
     characters = Project.find(params[:project_id]).characters
     new_characters = []
     characters.map do |character|
-      actor_suggestions = suggestions(character)
+      actor_suggestions = character.suggestions()
       character = character.to_hash()
       character["suggestions"] = actor_suggestions
       new_characters << character
     end
-    binding.pry
     respond_to do |f|
       f.html  {render :layout => false }
       f.json  {render :json => new_characters }
@@ -31,20 +30,6 @@ class CharactersController < ApplicationController
         f.html {render nothing: true}
         f.json {render json: character, status: 201 }
     end
-  end
-
-  def suggestions(character)
-
-     character_params = character.attributes
-     character_params["id"] = nil
-     character_params["name"] = nil
-     character_params["project_id"] = nil
-     character_params["user_id"] = nil
-     character_params["created_at"] = nil
-     character_params["updated_at"] = nil
-     search = character_params.delete_if{|k,v| v.nil?}
-     return suggestions = User.where(search)
-
   end
 
   def update

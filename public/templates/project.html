@@ -28,12 +28,12 @@
 
   <!-- Iterate over the characters -->
   <div ng-repeat="character in characters">
-    <p>{{character.name}}</p>
-    <p>Actor Suggestions:{{character.suggestions}}
-  </div>
-<hr>
-  <div ng-repeat="sug in suggestions">
-    <p>{{sug}}</p>
+    <p>{{character.name}} | {{character.age}}</p>
+    <p>Actor Suggestions:
+    <div ng-repeat="sug in character.suggestions">
+      <p>{{sug.name}} | {{sug.age}}</p>
+    </div>
+  <hr>
   </div>
 
   Characters:

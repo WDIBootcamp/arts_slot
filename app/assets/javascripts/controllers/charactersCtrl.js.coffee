@@ -18,15 +18,12 @@ angular.module("artSlotAppCtrls")
 
           #empty the character's form on the view
           $scope.character = {}
-
           )
 
-        # $scope.gender = [
-        #   {name: "male"}
-        #   {name: "female"}
-        # ]
-
         $scope.suggestActors = (character) ->
+          # this doesn't seem to be working. if any of the
+          #attributes are left blank, the response is undefined
+          #and therefore returns all of the users.
           result = userRes.query {
             career: "actor"
             age: character.age
@@ -36,7 +33,6 @@ angular.module("artSlotAppCtrls")
             hair_color: character.hair_color
             gender: character.gender
           }
-
           result.$promise.then (suggestions) ->
             $scope.suggestions = suggestions
             console.log "Sugs:" + angular.toJson $scope.suggestions
