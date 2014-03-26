@@ -11,7 +11,6 @@ angular.module("artSlotAppCtrls")
             $scope.projects = data;
             )
 
-
         $scope.createProject = ->
           $scope.project = {}
           project = new projectRes($scope.project)
