@@ -26,11 +26,8 @@ userRouter = angular.module("userRouter", ["rgRoute"])
 angular.module('projectRouter', [
   'ngRoute'
 ])
-
   .config(["$routeProvider",
     ($routeProvider) ->
-
-
       $routeProvider.when("/",
         templateUrl: "../templates/start.html"
         controller: "projectsCtrl"
@@ -43,17 +40,19 @@ angular.module('projectRouter', [
       )
 ])
 
-
 angular.module('userRouter', [
   'ngRoute'
 ])
-
   .config(["$routeProvider",
     ($routeProvider) ->
-
-
       $routeProvider.when("/users",
         templateUrl: "../templates/all_users.html"
         controller: "usersCtrl"
+      ).when('/login',
+        templateUrl: '../templates/registration/login.html'
+        controller: 'loginCtrl'
+      ).when('/signup',
+        templateUrl: '../templates/registration/signup.html'
+        controller: 'loginCtrl'
       )
 ])
