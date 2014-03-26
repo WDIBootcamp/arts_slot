@@ -21,7 +21,6 @@ angular.module("artSlotAppCtrls")
         $scope.updateProject = ->
           console.log $scope.project
           $scope.project.id = $routeParams.id
-
           console.log  projectRes.update($scope.project)
 
 
