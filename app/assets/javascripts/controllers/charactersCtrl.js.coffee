@@ -1,7 +1,7 @@
 angular.module("artSlotAppCtrls")
   .controller("charactersCtrl", [
-    "$scope", "$http", "characterRes", "$routeParams", "userRes"
-      ($scope, $http, characterRes, $routeParams, userRes) ->
+    "$scope", "characterRes", "$routeParams", "userRes"
+      ($scope, characterRes, $routeParams, userRes) ->
 
         $scope.projectId = $routeParams.id
 
@@ -37,20 +37,23 @@ angular.module("artSlotAppCtrls")
             $scope.suggestions = suggestions
             console.log "Sugs:" + angular.toJson $scope.suggestions
 
+        # $scope.characterDetails = (character) ->
+        #   $scope.characterId = $routeParams.id
+        #   characterRes.query({character_id: $scope.characterId}, (data)->
+        #       $scope.characters = data;
+        #   )
+
 ])
 
-angular.module("artSlotAppCtrls")
   .controller("characterDetailsCtrl", [
-    "$scope", "$routeParams", "$http"
-      ($scope, $routeParams, $http) ->
-            $scope.characterId = $routeParams.id
+    "$scope", "characterRes", "$routeParams", "$http"
+      ($scope, characterRes, $routeParams, $http) ->
+        $scope.characterId = $routeParams.id
 
-            $scope.character = null
+        $http.get("/projects/"+$routeParams.project_id+"/characters/"+$scope.characterId+".json").
+          success((data) ->
+            console.log(data);
+            $scope.character = data;
+          )
 
-            $http.get("/characters/"+$scope.characterId+".json").
-                success((data) ->
-                    console.log(data);
-                    $scope.character = data;
-              )
-
-])
+  ])

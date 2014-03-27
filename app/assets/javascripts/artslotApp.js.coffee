@@ -63,10 +63,7 @@ angular.module('characterRouter', [
 ])
   .config(["$routeProvider",
     ($routeProvider) ->
-      $routeProvider.when("/projects/:id/suggestions",
-        templateUrl: "../templates/suggestions.html"
-        controller: "charactersCtrl"
-      ).when("/characters/:id",
+      $routeProvider.when("/projects/:project_id/characters/:id",
         templateUrl: "../templates/character.html"
         controller: "characterDetailsCtrl"
       )

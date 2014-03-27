@@ -16,9 +16,14 @@ class CharactersController < ApplicationController
   end
 
   def show
+    character = Character.find(params[:id])
+    actor_suggestions = character.suggestions()
+    character = character.to_hash()
+    character["suggestions"] = actor_suggestions
+
     respond_to do |f|
       f.html  {render :layout => false }
-      f.json  {render :json => Character.find(params[:id])}
+      f.json  {render :json => character}
     end
   end
 
