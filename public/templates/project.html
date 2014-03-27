@@ -3,11 +3,11 @@
       <div class="row">
 
           <div ng-controller="projectsCtrl">
-            <form ng-submit="updateProject()"  ng-init="project={}">
-              <input id="project_field_title" type="text" ng-model="project.name" placeholder="name">
-              <input id="project_field_data" type="text" ng-model="project.location" placeholder="location">
-              <input id="project_field_data" type="text" ng-model="project.description" placeholder="description">
-            </form>
+              <form ng-submit="updateProject()"  ng-init="project={}">
+                <input id="project_field_title" type="text" ng-model="project.name" placeholder="film title">
+                <input id="project_field_data" type="text" ng-model="project.location" placeholder="production location">
+                <input id="project_field_data" type="text" ng-model="project.description" placeholder="description">
+              </form>
 
         </div>
 
@@ -33,13 +33,13 @@
       <div class="row">
 
 
-        <div class="large-4 small-12 columns">
+        <div id="form_for_character" class="large-4 small-12 columns">
           <form ng-submit="saveCharacter()" ng-init="character={}">
-            <input type="text" ng-model="character.name" placeholder="name">
+            <input class="add_character_form" type="text" ng-model="character.name" placeholder="name">
             <input type="text" ng-model="character.age" placeholder="age">
             <input type="text" ng-model="character.gender" placeholder="gender">
             <input type="text" ng-model="character.description" placeholder="description">
-            <button class="btn btn-primary">--></button>
+            <button id="add_char_button" class="btn btn-primary">add character</button>
           </form>
         </div>
 
