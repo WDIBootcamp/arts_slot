@@ -62,15 +62,15 @@ angular.module("artSlotAppCtrls")
         #     success_message: "An unlock e-mail has been sent to your e-mail address."
         #     error_entity: $scope.login_error
 
-        # $scope.confirm = ->
-        #   $scope.submit
-        #     method: "POST"
-        #     url: "/users/confirmation.json"
-        #     data:
-        #       user:
-        #         email: $scope.login_user.email
-        #     success_message: "A new confirmation link has been sent to your e-mail address."
-        #     error_entity: $scope.login_error
+        $scope.confirm = ->
+          $scope.submit
+            method: "POST"
+            url: "/users/confirmation.json"
+            data:
+              user:
+                email: $scope.login_user.email
+            success_message: "A new confirmation link has been sent to your e-mail address."
+            error_entity: $scope.login_error
 
         $scope.register = ->
           $scope.submit
