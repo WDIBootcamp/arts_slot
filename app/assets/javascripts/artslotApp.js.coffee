@@ -54,7 +54,7 @@ angular.module('userRouter', [
       ).when('/login',
         templateUrl: '../templates/registration/login.html'
         controller: 'loginCtrl'
-      ).when('/users/:id/edit')
+      ).when('/users/:id/edit'
         templateUrl: '../templates/edit_user.html'
         controller: 'usersCtrl'
       )

@@ -1,7 +1,7 @@
 angular.module("artSlotAppCtrls")
   .controller("loginCtrl", [
     "$scope", "$http", "$location"
-      ($scope, $http, "$location") ->
+      ($scope, $http, $location) ->
 
         $scope.login_user =
           email: null
