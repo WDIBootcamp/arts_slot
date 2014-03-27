@@ -5,9 +5,9 @@ artSlotApp = angular.module("artSlotApp", [
   "userRouter", "usersService"
 ])
 
-  .config(["$httpProvider", ($httpProvider) ->
-       $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
-  ])
+  # .config(["$httpProvider", ($httpProvider) ->
+  #      $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
+  # ])
 
 artSlotAppCtrls = angular.module("artSlotAppCtrls", [])
 projectRouter = angular.module("projectRouter", ["rgRoute"])
