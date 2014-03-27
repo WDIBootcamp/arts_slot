@@ -110,3 +110,37 @@ input:focus {
   background-color: black;
   border: none;
 }
+
+
+.actor_clip {
+  width: 100%;
+}
+
+.icy_actor_details {
+  background-color: rgba(220,220,220,0.5);
+  position: relative;
+  top: 800px;
+  min-height: 500px;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#acting_video {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+#actor_panel {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+}
