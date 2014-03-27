@@ -2,35 +2,47 @@
 <div class="panel" id="actor_panel">
 
       <div class="row">
-
+        <div class="small-12 medium-8 columns">
           <h3 class="char_name">{{user.name}}</h3>
-
-          <a href="#" class="button split">Invite to audition for (role you navigated via) <span data-dropdown="drop"></span></a><br>
-          <ul id="drop" class="f-dropdown" data-dropdown-content>
-            <li><a href="#">(other role in your movie)</a></li>
-            <li><a href="#">(other role in your movie)</a></li>
-            <li><a href="#">(other role in your movie)</a></li>
-          </ul>
-
+        </div>
+        <div class="small-12 medium-4 columns">
+          <a href="#" id="invite_button" class="button">Invite to audition<span data-dropdown="drop"></span></a>
+        </div>
       </div>
 
 </div>
+
+
+
 
 
 <div id="acting_video" class="flex-video">
         <iframe width="420" height="315" src="//www.youtube.com/embed/xb39Xr5VKFU?autoplay=1&showinfo=0&autohide=1&controls=0&modestbranding=1" frameborder="0" allowfullscreen></iframe>
 </div>
 
-      <div class="icy_actor_details">
 
-        <div class="row">
-          <div class="large-6 columns">
-            Filmography
-          </div>
-          <div class="large-6 columns">
-            Statistics
-          </div>
 
-        </div>
 
-      </div>
+
+<div class="icy_actor_details">
+
+  <div class="row">
+    <div class="large-6 columns">
+      Filmography
+    </div>
+    <div class="large-6 columns">
+      Statistics
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+  $( window ).scroll(function() {
+    $( "#acting_video" ).css( "opacity", ".8" ).fadeOut( "slow" );
+  });
+
+</script>

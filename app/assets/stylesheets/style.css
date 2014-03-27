@@ -137,10 +137,26 @@ body {
   height: 100%;
   width: 100%;
   position: fixed;
+  bottom: 0;
 }
 
 #actor_panel {
   position: fixed;
   z-index: 100;
   width: 100%;
+}
+
+
+.char_name {
+  margin: 10px;
+}
+
+#invite_button {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+
+@media (max-width: 700px) {
+
 }
