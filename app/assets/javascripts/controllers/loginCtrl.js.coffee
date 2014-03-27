@@ -17,7 +17,9 @@ angular.module("artSlotAppCtrls")
           password_confimation: null
 
         $scope.register_error =
-          message: null
+          email: null
+          password: null
+          password_confirmation: null
           errors: {}
 
         $scope.login = ->
@@ -60,15 +62,15 @@ angular.module("artSlotAppCtrls")
         #     success_message: "An unlock e-mail has been sent to your e-mail address."
         #     error_entity: $scope.login_error
 
-        $scope.confirm = ->
-          $scope.submit
-            method: "POST"
-            url: "/users/confirmation.json"
-            data:
-              user:
-                email: $scope.login_user.email
-            success_message: "A new confirmation link has been sent to your e-mail address."
-            error_entity: $scope.login_error
+        # $scope.confirm = ->
+        #   $scope.submit
+        #     method: "POST"
+        #     url: "/users/confirmation.json"
+        #     data:
+        #       user:
+        #         email: $scope.login_user.email
+        #     success_message: "A new confirmation link has been sent to your e-mail address."
+        #     error_entity: $scope.login_error
 
         $scope.register = ->
           $scope.submit
@@ -79,13 +81,13 @@ angular.module("artSlotAppCtrls")
                 email: $scope.register_user.email
                 password: $scope.register_user.password
                 password_confirmation: $scope.register_user.password_confirmation
-            success_message: "You have been registered and logged in.  A confirmation e-mail has been sent to your e-mail address, your access will terminate in 2 days if you do not use the link in that e-mail."
+            success_message: "You have been registered and logged in.  A confirmation e-mail has been sent to your e-mail address."
             error_entity: $scope.register_error
 
         $scope.change_password = ->
           $scope.submit
             method: "PUT"
-            url: "/users.json"
+            url: "/users/password.json"
             data:
               user:
                 email: $scope.register_user.email
@@ -93,7 +95,7 @@ angular.module("artSlotAppCtrls")
                 password_confirmation: $scope.register_user.password_confirmation
             success_message:  "Your password has been updated."
             error_entity: $scope.register_error
-
+          return
 
         $scope.submit = (parameters) ->
           $scope.reset_messages()
@@ -136,7 +138,5 @@ angular.module("artSlotAppCtrls")
           $scope.register_user.password = null
           $scope.register_user.password_confirmation = null
           return
-
-        return
 
   ])
