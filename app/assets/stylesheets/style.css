@@ -119,8 +119,9 @@ input:focus {
 .icy_actor_details {
   background-color: rgba(220,220,220,0.5);
   position: relative;
-  top: 800px;
+  top: 980px;
   min-height: 500px;
+  font-size: 20px;
 }
 
 html {
