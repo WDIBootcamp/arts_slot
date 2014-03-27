@@ -113,7 +113,7 @@ angular.module("artSlotAppCtrls")
               else
                 parameters.error_entity.message = "Success, but with an unexpected success code, potentially a server error, please report via support channels as this indicates a code defect.  Server response was: " + JSON.stringify(data)
             return
-          ).error(data, status) ->
+          ).error((data, status) ->
             if status is 422
               parameters.error_entity.errors = data.errors
             else
@@ -122,6 +122,7 @@ angular.module("artSlotAppCtrls")
               else
                 parameters.error_entity.message = "Unexplained error, potentially a server error, please report via support channels as this indicates a code defect.  Server response was: " + JSON.stringify(data)
             return
+          )
           return
 
         $scope.reset_messages = ->
