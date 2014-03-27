@@ -1,7 +1,7 @@
 angular.module("artSlotAppCtrls")
   .controller("loginCtrl", [
-    "$scope", "$http", "$location"
-      ($scope, $http, $location) ->
+    "$scope", "$http", "$location", "$anchorScroll"
+      ($scope, $http, $location, $anchorScroll) ->
 
         $scope.login_user =
           email: null
@@ -153,5 +153,13 @@ angular.module("artSlotAppCtrls")
           $scope.register_user.password = null
           $scope.register_user.password_confirmation = null
           return
+
+        $scope.gotoActorSignup = ->
+          $location.hash("actorSignup")
+          $anchorScroll()
+
+        $scope.gotoProducerSignup = ->
+          $loaction.hash("producerSignup")
+          $anchorScroll()
 
   ])

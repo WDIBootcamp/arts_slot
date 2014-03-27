@@ -1,0 +1,105 @@
+$theme-color: #01B6AD;
+$button: #009494;
+$button2: #0A4958;
+
+
+.button-group {
+  position: absolute;
+  right:    0;
+  bottom:   0;
+}
+
+.digital-agent {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+}
+
+.digital-agent-text {
+  margin-top: 50%;
+  text-align: center;
+  font-size: 3em;
+  padding: 10px;
+  border: 3px solid $theme-color;
+}
+
+.error {
+  color: red;
+}
+
+.button-group a {
+  color: white;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.sign-up {
+  margin: 0px;
+}
+
+.page-heading {
+  text-align: center;
+  font-size: 4em;
+}
+
+fieldset legend {
+  font-weight: bold;
+  background: white;
+  padding: 0.1875rem 0.1875rem;
+  margin: 0 auto;
+}
+
+fieldset {
+  padding: 0;
+}
+
+.big-input {
+  width: 100%;
+}
+
+.big-input input[type="text"], input[type="password"] {
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.714em;
+  padding: 1em 3em;
+  border: 0px;
+  box-shadow: none;
+  -webkit-transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+  -moz-transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+  -ms-transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+  -o-transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+}
+
+.big-input input:hover {
+  border-left: 3px solid $theme-color;
+}
+
+input[type='text']:focus, input[type="password"]:focus {
+    box-shadow: none;
+    background: white;
+    border-left: 15px solid $theme-color;
+
+}
+
+.button-columns {
+  padding: 0;
+}
+
+.sign-up-button {
+  margin: 0;
+  width: 100%;
+  height: 100px;
+  background: $button;
+}
+
+.btn {
+  outline: none;
+}
+
+.left-button {
+  background: $button2;
+}
+
+.sign-up-button:hover {
+  background: gray;
+}

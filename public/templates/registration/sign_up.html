@@ -5,23 +5,30 @@
       </div>
     </div>
     <div class="button-group">
-      <dl class="sub-nav">
         <div class ="small-6 columns button-columns">
-          <button ng-click="register_procuer()" class="btn btn-primary sign-up-button left-button">Producer</button>
+          <a ng-click="gotoActorSignup()">
+            <button class="btn btn-primary sign-up-button left-button">
+              actor
+            </button>
+          </a>
         </div>
         <div class ="small-6 columns button-columns">
-          <button ng-click="register_actor()" class="btn btn-primary sign-up-button" >Actor</button>
+          <a ng-click="gotoProducerSignup()">
+            <button class="btn btn-primary sign-up-button right-button">
+              producer
+            </button>
+          </a>
         </div>
-      </dl>
     </div>
 </div>
 
 
+<!--######################################## actor signup -->
 <div class="row">
   <div class = "small-10 medium-6 small-centered columns">
     <fieldset>
-
-      <legend class="page-heading">Join</legend>
+      <a id="actorSignup"></a>
+      <legend class="page-heading">Get Cast</legend></h3>
 
       <div ng-show="register_error.message" class="error">
         <p>{{register_error.message}}</p>
@@ -31,10 +38,10 @@
         <div ng-class="{error: register_error.errors.email}">
           <li class='big-input'>
             <input type="text" ng-model="register_user.email" placeholder="Email" />
+            <div ng-show="register_error.errors.email">
+              <div ng-repeat="field_error in register_error.errors.email">{{field_error}}</div>
+            </div>
           </li>
-          <div ng-show="register_error.errors.email">
-            <div ng-repeat="field_error in register_error.errors.email">{{field_error}}</div>
-          </div>
         </div>
 
         <div ng-class="{error: register_error.errors.password}">
@@ -68,3 +75,6 @@
     </fieldset>
   </div>
 </div>
+
+
+<a id="actorSignup"></a>
