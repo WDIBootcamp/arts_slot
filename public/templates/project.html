@@ -1,28 +1,59 @@
-  <div class="row">
-    <div class="small-3 large-3 columns">
+<div class="panel" id="character_panel">
 
-        <div ng-controller="projectsCtrl">
-          <form ng-submit="updateProject()"  ng-init="project={}">
-            <input id="project_field_title" type="text" ng-model="project.name" placeholder="name">
-            <input id="project_field_data" type="text" ng-model="project.location" placeholder="location">
-            <input id="project_field_data" type="text" ng-model="project.description" placeholder="description">
-          </form>
+      <div class="row">
+
+          <div ng-controller="projectsCtrl">
+            <form ng-submit="updateProject()"  ng-init="project={}">
+              <input id="project_field_title" type="text" ng-model="project.name" placeholder="name">
+              <input id="project_field_data" type="text" ng-model="project.location" placeholder="location">
+              <input id="project_field_data" type="text" ng-model="project.description" placeholder="description">
+            </form>
+
         </div>
 
-    </div>
+      </div>
 
-    <div class="small-9 large-9 columns">
+</div>
 
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+
+
+
+
+<hr>
+
+
+
+
+
 
 
 
     <div ng-controller="charactersCtrl">
+
+
+
+
+
+      <div class="row">
+
+
+        <div class="large-4 small-12 columns">
+          <form ng-submit="saveCharacter()" ng-init="character={}">
+            <input type="text" ng-model="character.name" placeholder="name">
+            <input type="text" ng-model="character.age" placeholder="age">
+            <input type="text" ng-model="character.gender" placeholder="gender">
+            <input type="text" ng-model="character.description" placeholder="description">
+            <button class="btn btn-primary">--></button>
+          </form>
+        </div>
+
+
+
+
+
+        <div class="large-8 small-12 columns">
+
+
             <div ng-repeat="character in characters">
               <a href="#/projects/{{character.project_id}}/characters/{{character.id}}">
                 <div class="panel" id="character_panel">
@@ -68,16 +99,7 @@
 
           <br>
           <br>
-        <form ng-submit="saveCharacter()" ng-init="character={}">
-          <div class="small-12 large-12 columns">
 
-          </div>
-          <input type="text" ng-model="character.name" placeholder="name">
-          <input type="text" ng-model="character.age" placeholder="age">
-          <input type="text" ng-model="character.gender" placeholder="gender">
-          <input type="text" ng-model="character.description" placeholder="description">
-          <button class="btn btn-primary">--></button>
-        </form>
       </div>
 
 
@@ -87,20 +109,11 @@
   </div>
 </div>
 
+</div>
+</div>
 
-      <div ng-controller="charactersCtrl">
 
-        <!-- Iterate over the characters -->
-        <div ng-repeat="character in characters">
-          <p>{{character.name}} | {{character.age}}</p>
-          <p>Actor Suggestions:
-          <div ng-repeat="sug in character.suggestions">
-            <p>{{sug.name}} | {{sug.age}}</p>
-          </div>
-        <hr>
-        </div>
 
-      </div>
 
 
 
