@@ -1,7 +1,7 @@
 angular.module("artSlotAppCtrls")
   .controller("usersCtrl", [
-    "$scope", "userRes", "$location", "$routeParams"
-      ($scope, userRes, $location, $routeParams) ->
+    "$scope", "userRes", "$location", "$routeParams", "$http"
+      ($scope, userRes, $location, $routeParams, $http) ->
 
         $scope.users = []
 
@@ -9,5 +9,12 @@ angular.module("artSlotAppCtrls")
           console.log(data);
           $scope.users = $scope.users.concat(data);
           )
+
+        $http.get("/users/"+$routeParams.id+".json").
+          success((data) ->
+            console.log(data);
+            $scope.user = data;
+          )
+
 
   ])

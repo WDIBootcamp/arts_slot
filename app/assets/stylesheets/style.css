@@ -59,7 +59,7 @@
 #character_panel {
   background-color : transparent;
 
-  border: none;
+/*  border: 1px solid black;*/
 }
 
 #new_char_form {

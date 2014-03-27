@@ -54,7 +54,11 @@ angular.module('userRouter', [
       $routeProvider.when("/users",
         templateUrl: "../templates/all_users.html"
         controller: "usersCtrl"
+      ).when("/users/:id",
+        templateUrl: "../templates/user.html"
+        controller: "usersCtrl"
       )
+
 ])
 
 
