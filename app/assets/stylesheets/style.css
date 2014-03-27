@@ -89,3 +89,8 @@
 .char_data{
   font-size: 18px;
 }
+
+.top-bar {
+  height: 175px;
+  background-color: white;
+}
