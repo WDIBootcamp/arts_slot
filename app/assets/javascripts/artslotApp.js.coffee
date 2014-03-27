@@ -48,11 +48,14 @@ angular.module('userRouter', [
       $routeProvider.when("/users",
         templateUrl: "../templates/all_users.html"
         controller: "usersCtrl"
+      ).when('/signup',
+        templateUrl: '../templates/registration/sign_up.html'
+        controller: 'loginCtrl'
       ).when('/login',
         templateUrl: '../templates/registration/login.html'
         controller: 'loginCtrl'
-      ).when('/signup',
-        templateUrl: '../templates/registration/signup.html'
-        controller: 'loginCtrl'
+      ).when('/users/:id/edit')
+        templateUrl: '../templates/edit_user.html'
+        controller: 'usersCtrl'
       )
 ])

@@ -1,3 +1,77 @@
+$theme-color: #01B6AD;
+$button: #009494;
+$button2: #0A4958;
+
 .error {
   color: red;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.sign-up {
+  margin: 0px;
+}
+
+.page-heading {
+  text-align: center;
+  font-size: 4em;
+}
+
+fieldset legend {
+  font-weight: bold;
+  background: white;
+  padding: 0.1875rem 0.1875rem;
+  margin: 0 auto;
+}
+
+fieldset {
+  padding: 0;
+}
+
+.big-input {
+  width: 100%;
+}
+
+.big-input input[type="text"], input[type="password"] {
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.714em;
+  padding: 1em 3em;
+  border: 0px;
+  box-shadow: none;
+  -webkit-transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+  -moz-transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+  -ms-transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+  -o-transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+}
+
+.big-input input:hover {
+  border-left: 3px solid $theme-color;
+}
+
+input[type='text']:focus, input[type="password"]:focus {
+    box-shadow: none;
+    background: white;
+    border-left: 15px solid $theme-color;
+
+}
+
+.button-columns {
+  padding: 0;
+}
+
+.sign-up-button {
+  margin: 0;
+  width: 100%;
+  background: $button;
+}
+
+.left-button {
+  background: $button2;
+}
+
+.sign-up-button:hover {
+  background: gray;
 }

@@ -1,7 +1,7 @@
 angular.module("artSlotAppCtrls")
   .controller("loginCtrl", [
-    "$scope", "$http"
-      ($scope, $http) ->
+    "$scope", "$http", "$location"
+      ($scope, $http, "$location") ->
 
         $scope.login_user =
           email: null
@@ -72,7 +72,7 @@ angular.module("artSlotAppCtrls")
             success_message: "A new confirmation link has been sent to your e-mail address."
             error_entity: $scope.login_error
 
-        $scope.register = ->
+        $scope.register_producer = ->
           $scope.submit
             method: "POST"
             url: "/users.json"
@@ -83,6 +83,20 @@ angular.module("artSlotAppCtrls")
                 password_confirmation: $scope.register_user.password_confirmation
             success_message: "You have been registered and logged in.  A confirmation e-mail has been sent to your e-mail address."
             error_entity: $scope.register_error
+          $location.path("/projects/:id")
+
+        $scope.register_actor = ->
+          $scope.submit
+            method: "POST"
+            url: "/users.json"
+            data:
+              user:
+                email: $scope.register_user.email
+                password: $scope.register_user.password
+                password_confirmation: $scope.register_user.password_confirmation
+            success_message: "You have been registered and logged in.  A confirmation e-mail has been sent to your e-mail address."
+            error_entity: $scope.register_error
+          $location.path("/users/:id/edit")
 
         $scope.change_password = ->
           $scope.submit
