@@ -1,9 +1,22 @@
 #actor_card {
-  margin: 30px;
+/*  border: 1px solid black;*/
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 0;
+  max-width: 30%;
 }
 
-.actor_pic_table {
-  height: 170px;
+
+.actor_card_stats {
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+  line-height: 130%;
+}
+
+.actor_pic {
+
+  width: 100%;
 }
 
 
@@ -70,4 +83,9 @@
 
 .char_name {
   margin-top: 30px;
+  font-size: 35px;
+}
+
+.char_data{
+  font-size: 18px;
 }
