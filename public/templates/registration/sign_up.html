@@ -10,8 +10,7 @@
     <div class="row register-row">
       <div class = "small-10 medium-6 small-centered columns">
         <fieldset>
-          <!-- <legend class="page-heading">register</legend> -->
-          <div class="login"> already a user?</div>
+          <div class="login" ng-click="loginPage()"> already a user?</div>
           <div ng-show="register_error.message" class="error">
             <p>{{register_error.message}}</p>
           </div>
