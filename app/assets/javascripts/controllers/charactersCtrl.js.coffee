@@ -1,7 +1,7 @@
 angular.module("artSlotAppCtrls")
   .controller("charactersCtrl", [
-    "$scope", "$http", "characterRes", "$routeParams", "userRes"
-      ($scope, $http, characterRes, $routeParams, userRes) ->
+    "$scope", "characterRes", "$routeParams", "userRes"
+      ($scope, characterRes, $routeParams, userRes) ->
 
         $scope.projectId = $routeParams.id
 
@@ -36,5 +36,21 @@ angular.module("artSlotAppCtrls")
           result.$promise.then (suggestions) ->
             $scope.suggestions = suggestions
             console.log "Sugs:" + angular.toJson $scope.suggestions
+
+
+])
+
+  .controller("characterDetailsCtrl", [
+    "$scope", "characterRes", "$routeParams", "$http"
+      ($scope, characterRes, $routeParams, $http) ->
+        console.log angular.toJson $routeParams
+        $scope.characterId = $routeParams.id
+        $scope.projectId = $routeParams.project_id
+
+        $http.get("/projects/"+$routeParams.project_id+"/characters/"+$scope.characterId+".json").
+          success((data) ->
+            console.log(data);
+            $scope.character = data;
+          )
 
   ])
