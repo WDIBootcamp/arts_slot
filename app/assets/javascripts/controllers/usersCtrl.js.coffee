@@ -6,13 +6,14 @@ angular.module("artSlotAppCtrls")
         $scope.users = []
 
         userRes.query((data) ->
-          console.log(data);
           $scope.users = $scope.users.concat(data);
           )
 
         $scope.updateUser = ->
-          console.log $scope.user
           $scope.user.id = $routeParams.id
-          console.log  userRes.update($scope.user)
+          userRes.update($scope.user)
+
+        $scope.gender = ->
+          
 
   ])

@@ -105,6 +105,9 @@ angular.module("artSlotAppCtrls")
             $scope.redirectToUser
             )
 
+        # this method redirects the user (who chose actor)
+        #to his edit info page
+        
         $scope.redirectToUser = (user) ->
           console.log angular.toJson user
           $location.path("/users/"+user.id+"/edit")
