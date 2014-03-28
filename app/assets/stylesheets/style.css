@@ -12,6 +12,7 @@ input[type=text] {
   border-right: none;
   border-left: none;
   box-shadow: none;
+  background-color: transparent;
 }
 
 input:focus {
@@ -87,7 +88,7 @@ body {
 
 #character_panel {
   background-color : transparent;
-  text-align: center;
+  text-align: left;
 }
 
 #project_panel {
@@ -96,17 +97,19 @@ body {
 }
 
 #form_for_character {
-  border: .4px solid black;
+  border: .5px solid black;
   padding: 0;
   position: fixed;
   left: 35px;
   width: 250px;
-  top: 180px;
+  top: 190px;
 }
 
 #add_char_button {
-  background-color: black;
-  border: none;
+  background-color: transparent;
+  border: 1px solid black;
+  color: black;
+
 }
 
 
@@ -143,6 +146,10 @@ body {
 
 .actor_pic {
   width: 100%;
+}
+
+#character_panel {
+  text-align: center;
 }
 
 
