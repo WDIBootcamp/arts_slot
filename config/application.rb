@@ -19,10 +19,24 @@ module CastingSlotMachine
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      address:              'smtp.gmail.com',
+      port:                 587,
+      # domain:               'example.com',
+      user_name:            'castingslotmachine@gmail.com',
+      password:             ENV['GMAIL_PASSWORD'],
+      authentication:       'plain',
+      enable_starttls_auto: true  }
+
+
      config.assets.initialize_on_precompile = false
 
     #  config.to_prepare do
     #     DeviseController.respond_to :html, :json
     #   end
+
   end
 end

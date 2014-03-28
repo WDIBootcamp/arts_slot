@@ -15,6 +15,7 @@ class Character < ActiveRecord::Base
        character_params["user_id"] = nil
        character_params["created_at"] = nil
        character_params["updated_at"] = nil
+       character_params["description"] = nil
        search = character_params.delete_if{|k,v| v.nil?}
        return suggestions = User.where(search)
     end

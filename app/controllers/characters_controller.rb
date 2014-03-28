@@ -16,15 +16,20 @@ class CharactersController < ApplicationController
   end
 
   def show
+    character = Character.find(params[:id])
+    actor_suggestions = character.suggestions()
+    character = character.to_hash()
+    character["suggestions"] = actor_suggestions
+
     respond_to do |f|
       f.html  {render :layout => false }
-      f.json  {render :json => Character.find(params[:id])}
+      f.json  {render :json => character}
     end
   end
 
   def create
     project = Project.find(params[:project_id])
-    new_character = params.require(:character).permit(:name, :age, :height, :weight, :eye_color, :hair_color, :gender, :project_id)
+    new_character = params.require(:character).permit(:name, :age, :height, :weight, :eye_color, :description, :hair_color, :gender, :project_id)
     character = project.characters.create(new_character)
     respond_to do |f|
         f.html {render nothing: true}

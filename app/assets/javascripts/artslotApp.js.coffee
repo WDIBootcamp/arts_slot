@@ -1,7 +1,7 @@
 artSlotApp = angular.module("artSlotApp", [
   "artSlotAppCtrls"
   "projectRouter", "projectsService",
-  "charactersService"
+  "charactersService", "characterRouter"
   "userRouter", "usersService"
 ])
 
@@ -31,7 +31,7 @@ angular.module('projectRouter', [
         templateUrl: "../templates/all_projects.html"
         controller: "projectsCtrl"
       )
-])
+  ])
 
 angular.module('userRouter', [
   'ngRoute'
@@ -51,4 +51,14 @@ angular.module('userRouter', [
         templateUrl: '../templates/edit_user.html'
         controller: 'usersCtrl'
       )
+  ])
+
+angular.module('characterRouter', [
+  'ngRoute'
 ])
+  .config(["$routeProvider",
+    ($routeProvider) ->
+      $routeProvider.when("/projects/:project_id/characters/:id",
+        templateUrl: "../templates/character.html.erb"
+        controller: "characterDetailsCtrl"
+  ])

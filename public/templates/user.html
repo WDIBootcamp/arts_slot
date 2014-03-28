@@ -1,29 +1,52 @@
+<div class="panel" id="actor_panel">
+
+      <div class="row">
+        <div class="small-12 medium-8 columns">
+          <h3 class="char_name">{{user.name}}</h3>
+          <p></p>
+        </div>
+        <div class="small-12 medium-4 columns">
+<!--           <%= button_to "Invite to audition", want_to_path(@intention), :method=>:post, :class => "btn btn-primary btn-lg" %> -->
+          <a href="#" id="invite_button" class="button">Invite to audition for <br> {{viaProject.name}} as {{asCharacter.name}} </a>
+        </div>
+      </div>
+
+</div>
+
+
+
+
+<div class="row">
+  <div class="small-12 columns">
+      <div id="acting_video" class="flex-video">
+        <iframe width="420" height="315" src="//www.youtube.com/embed/xb39Xr5VKFU?autoplay=1&showinfo=0&autohide=1&controls=0&modestbranding=1" frameborder="0" allowfullscreen></iframe>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="icy_actor_details">
+
+  <br>
+  <br>
 
   <div class="row">
-    <div class="small-12 large-12 columns">
-
-
-
-
-    <div ng-controller="usersCtrl">
-        <center><h1>{{user.name}}</h1></center>
+    <div class="small-12 medium-6 columns">
+      <p>{{user.age}}</p>
+      <p>{{user.ethnicity}}</p>
+      <p>Male</p>
+      <p>{{user.height}}</p>
+    </div>
+    <div class="small-12 medium-6 columns">
+      <p>Superman --- Man of Steel</p>
+      <p>George Orwell --- 1984</p>
+      <p>Man on the street --- GIant Fish Man</p>
     </div>
 
-    <br>
-    <br>
-    <br>
 
+  </div>
 
-NAME
-
-CAREER(S)
-
-PHOTO
-
-DETAILS / STATS
-
-CONTACT
-
-LINKS TO MY MOVIES
-
-LINKS TO MOVIES I APPLIED TO
+</div>
