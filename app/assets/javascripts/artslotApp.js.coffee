@@ -24,10 +24,7 @@ angular.module('projectRouter', [
 ])
   .config(["$routeProvider",
     ($routeProvider) ->
-      $routeProvider.when("/",
-        templateUrl: "../templates/start.html"
-        controller: "projectsCtrl"
-      ).when("/projects/:id",
+      $routeProvider.when("/projects/:id",
         templateUrl: "../templates/project.html"
         controller: "projectsCtrl"
       ).when("/projects",
@@ -44,7 +41,7 @@ angular.module('userRouter', [
       $routeProvider.when("/users",
         templateUrl: "../templates/all_users.html"
         controller: "usersCtrl"
-      ).when('/signup',
+      ).when('/',
         templateUrl: '../templates/registration/sign_up.html'
         controller: 'loginCtrl'
       ).when('/login',

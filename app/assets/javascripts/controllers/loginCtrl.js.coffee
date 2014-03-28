@@ -92,7 +92,7 @@ angular.module("artSlotAppCtrls")
                 $location.path("/projects/"+project.id)
 
         $scope.register_actor = ->
-          $scope.submit
+          $scope.submit(
             method: "POST"
             url: "/users.json"
             data:
@@ -101,8 +101,13 @@ angular.module("artSlotAppCtrls")
                 password: $scope.register_user.password
                 password_confirmation: $scope.register_user.password_confirmation
             success_message: "You have been registered and logged in.  A confirmation e-mail has been sent to your e-mail address."
-            error_entity: $scope.register_error
-          $location.path("/users/:id/edit")
+            error_entity: $scope.register_error,
+            $scope.redirectToUser
+            )
+
+        $scope.redirectToUser = (user) ->
+          console.log angular.toJson user
+          $location.path("/users/"+user.id+"/edit")
 
         $scope.change_password = ->
           $scope.submit
@@ -117,7 +122,7 @@ angular.module("artSlotAppCtrls")
             error_entity: $scope.register_error
           return
 
-        $scope.submit = (parameters) ->
+        $scope.submit = (parameters, callback) ->
           $scope.reset_messages()
           $http(
             method: parameters.method
@@ -132,7 +137,7 @@ angular.module("artSlotAppCtrls")
                 parameters.error_entity.message = data.error
               else
                 parameters.error_entity.message = "Success, but with an unexpected success code, potentially a server error, please report via support channels as this indicates a code defect.  Server response was: " + JSON.stringify(data)
-            return
+            callback data
           ).error((data, status) ->
             if status is 422
               parameters.error_entity.errors = data.errors
