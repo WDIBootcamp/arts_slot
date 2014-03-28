@@ -2,6 +2,8 @@ class Character < ActiveRecord::Base
     belongs_to :user
     belongs_to :project
 
+    serialize :ethnicity, Hash
+
     def to_hash
       hash = {}; self.attributes.each { |k,v| hash[k] = v }
       return hash
@@ -16,6 +18,7 @@ class Character < ActiveRecord::Base
        character_params["created_at"] = nil
        character_params["updated_at"] = nil
        character_params["description"] = nil
+       character_params["ethnicity"] = nil
        search = character_params.delete_if{|k,v| v.nil?}
        return suggestions = User.where(search)
     end

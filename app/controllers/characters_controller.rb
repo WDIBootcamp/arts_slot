@@ -21,7 +21,7 @@ class CharactersController < ApplicationController
     actor_suggestions = character.suggestions()
     character = character.to_hash()
     character["suggestions"] = actor_suggestions
-
+    character
     respond_to do |f|
       f.html  {render :layout => false }
       f.json  {render :json => character}
