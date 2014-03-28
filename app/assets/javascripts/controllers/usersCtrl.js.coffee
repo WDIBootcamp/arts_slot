@@ -5,6 +5,9 @@ angular.module("artSlotAppCtrls")
 
         $scope.users = []
 
+        $scope.pId = $routeParams.p
+        $scope.cId = $routeParams.c
+
         userRes.query((data) ->
           console.log(data);
           $scope.users = $scope.users.concat(data);
@@ -16,9 +19,13 @@ angular.module("artSlotAppCtrls")
             $scope.user = data;
           )
 
-        $scope.pId = $routeParams.p
-        # $scope.pName = pId.name
-        $scope.cId = $routeParams.c
+        $http.get("/projects/"+$scope.pId+".json").
+          success((data) ->
+            console.log(data);
+            $scope.viaProject = data;
+          )
+
+
 
 
 
