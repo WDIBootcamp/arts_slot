@@ -1,0 +1,60 @@
+<div class="digital-agent">
+    <div class="row">
+      <div class="small-10 medium-6 small-centered small-centered-text columns">
+        <!-- <div class="page-heading"> Register for a </div> -->
+        <div class="digital-agent-text">Digital Agent</div>
+      </div>
+    </div>
+
+    <!--######################################## signup -->
+    <div class="row register-row">
+      <div class = "small-10 medium-6 small-centered columns">
+        <fieldset>
+          <!-- <legend class="page-heading">register</legend> -->
+          <div class="login"> already a user?</div>
+          <div ng-show="register_error.message" class="error">
+            <p>{{register_error.message}}</p>
+          </div>
+          <ul class='sign-up'>
+            <div ng-class="{error: register_error.errors.email}">
+              <li class='big-input'>
+                <input type="text" ng-model="register_user.email" placeholder="Email" />
+                <div ng-show="register_error.errors.email">
+                  <div ng-repeat="field_error in register_error.errors.email">{{field_error}}</div>
+                </div>
+              </li>
+            </div>
+
+            <div ng-class="{error: register_error.errors.password}">
+              <li class='big-input'>
+                <input type="password" ng-model="register_user.password" placeholder="Password" />
+              </li>
+              <div ng-show="register_error.errors.password">
+                <div ng-repeat="field_error in register_error.errors.password">{{field_error}}</div>
+              </div>
+            </div>
+
+            <div ng-class="{error: register_error.errors.password_confirmation}">
+              <li class='big-input'>
+                <input type="password" ng-model="register_user.password_confirmation" placeholder="Password Confirmation" />
+              </li>
+              <div ng-show="register_error.errors.password_confirmation">
+                <div ng-repeat="field_error in register_error.errors.password_confirmation">{{field_error}}</div>
+              </div>
+            </div>
+
+          </ul>
+          <div>
+            <div class ="small-6 columns button-columns">
+              <button ng-click="register_producer()" class="btn btn-primary sign-up-button left-button">Producer</button>
+            </div>
+            <div class ="small-6 columns button-columns">
+              <button ng-click="register_actor()" class="btn btn-primary sign-up-button" >Actor</button>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+    </div>
+
+</div>

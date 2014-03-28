@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-CastingSlotMachine::Application.config.secret_key_base = '13b50bcbcf2c481beee61af62d5bc32730f39b3418b865b955153b310549bd32897ad1d25f6c169a03eb4e0807a69b085d474ceb615d01ce65ae2e98c56f63eb'
+CastingSlotMachine::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']

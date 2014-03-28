@@ -9,9 +9,12 @@ angular.module("artSlotAppCtrls")
         $scope.cId = $routeParams.c
 
         userRes.query((data) ->
-          console.log(data);
           $scope.users = $scope.users.concat(data);
           )
+
+        $scope.updateUser = ->
+          $scope.user.id = $routeParams.id
+          userRes.update($scope.user)
 
         $http.get("/users/"+$routeParams.id+".json").
           success((data) ->
@@ -30,11 +33,5 @@ angular.module("artSlotAppCtrls")
             console.log(data);
             $scope.asCharacter = data;
           )
-
-
-
-
-
-
 
   ])
