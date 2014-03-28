@@ -32,7 +32,7 @@ angular.module("artSlotAppCtrls")
                 password: $scope.login_user.password
             success_message: "You have been logged in."
             error_entity: $scope.login_error
-          return
+          $location.path("/projects")
 
         $scope.logout = ->
           $scope.submit
@@ -107,10 +107,15 @@ angular.module("artSlotAppCtrls")
 
         # this method redirects the user (who chose actor)
         #to his edit info page
-        
         $scope.redirectToUser = (user) ->
           console.log angular.toJson user
           $location.path("/users/"+user.id+"/edit")
+
+        $scope.loginPage = ->
+          $location.path("/login")
+
+        $scope.registerPage = ->
+          $location.path("/")
 
         $scope.change_password = ->
           $scope.submit

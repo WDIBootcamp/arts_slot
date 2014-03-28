@@ -1,15 +1,17 @@
 class ProjectsController < ApplicationController
+  before_filter :authenticate_user!
+
   def index
     respond_to do |f|
       f.html  {render :layout => false }
-      f.json  {render :json => Project.all}
+      f.json  {render :json => current_user.projects}
     end
   end
 
   def show
     respond_to do |f|
       f.html  {render :layout => false }
-      f.json  {render :json => Project.find(params[:id])}
+      f.json  {render :json => current_user.projects.find(params[:id])}
     end
   end
 
