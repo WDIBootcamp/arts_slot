@@ -15,6 +15,8 @@ angular.module("artSlotAppCtrls")
         $scope.updateUser = ->
           $scope.user.id = $routeParams.id
           userRes.update($scope.user)
+          $location.path("/actorAdded!")
+
 
         if $routeParams.p
           $http.get("/users/"+$routeParams.id+".json").

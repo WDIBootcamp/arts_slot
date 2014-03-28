@@ -14,4 +14,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+  User.find(params[:id]).update_attributes(params.require(:user).permit(:name, :age, :gender, :ethnicity))
+
+  render nothing: true, status: 200
+  end
+
 end

@@ -7,29 +7,13 @@ body {
   border: 1px solid black;
 }*/
 
-input[type=text] {
+.panel input[type=text] {
   border-top: none;
   border-right: none;
   border-left: none;
   box-shadow: none;
   background-color: transparent;
 }
-
-input:focus {
-  outline: none;
-}
-
-
-html {
-  height: 100%;
-  width: 100%;
-}
-
-body {
-  height: 100%;
-  width: 100%;
-}
-
 
 .char_name {
   margin-top: 30px;
@@ -39,8 +23,6 @@ body {
 .char_name {
   margin: 10px;
 }
-
-
 
 
 

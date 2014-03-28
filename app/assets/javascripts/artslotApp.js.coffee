@@ -57,8 +57,10 @@ angular.module('userRouter', [
       ).when("/users/:id",
         templateUrl: "../templates/user.html"
         controller: "usersCtrl"
-      )
-
+      ).when('/actorAdded!',
+        templateUrl: "../templates/confirmation.html"
+        controller: "userCtrl"
+        )
     ])
 
 angular.module('characterRouter', [

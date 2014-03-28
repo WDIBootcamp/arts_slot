@@ -2,7 +2,6 @@ $theme-color: #01B6AD;
 $button: #009494;
 $button2: #0A4958;
 
-
 .button-group {
   position: absolute;
   right:    0;
@@ -71,6 +70,7 @@ fieldset {
   font-size: 1.714em;
   padding: 1em 2em;
   border: 0px;
+  background-color: transparent;
   box-shadow: none;
   -webkit-transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
   -moz-transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
@@ -84,7 +84,7 @@ fieldset {
 
 input[type='text']:focus, input[type="password"]:focus {
     box-shadow: none;
-    background: white;
+    background-color: transparent;
     border-left: 15px solid $theme-color;
 
 }

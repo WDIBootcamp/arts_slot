@@ -5,28 +5,35 @@
       <ul class='sign-up'>
 
         <li class='big-input'>
-          <input type="text" ng-model="update_actor.email" placeholder="Name" />
+          <input type="text" ng-model="user.name" placeholder="Name" />
         </li>
 
         <li class='big-input'>
-          <input type="text" ng-model="update_actor.age" placeholder="Birth Day" />
+          <input type="text" ng-model="user.age" placeholder="Birth Day" />
         </li>
 
         <li class='big-input'>
-          <input type="text" ng-model="update_actor.gender" placeholder="Gender" />
+          <label>
+            <input type="radio" name="sex" value="male" ng-model="user.gender">
+            Male
+          </label>
+          <label>
+            <input type="radio" name="sex" value="female" ng-model="user.gender">
+            Female
+          </label>
         </li>
 
         <li class='big-input'>
-          <input type="text" ng-model="update_actor.ethnicity" placeholder="Ethnicity" />
+          <input type="text" ng-model="user.ethnicity" placeholder="Ethnicity" />
         </li>
 
         <li class='big-input'>
-          <input type="text" ng-model="update_actor.location" placeholder="Location" />
+          <input type="text" ng-model="user.location" placeholder="Location" />
         </li>
 
       </ul>
       <div class ="small-12 columns button-columns">
-        <button ng-click="update_actor()" class="btn btn-primary sign-up-button left-button">Get Cast!</button>
+        <button ng-click="updateUser()" class="btn btn-primary sign-up-button left-button">Get Cast!</button>
       </div>
     </fieldset>
   </div>
