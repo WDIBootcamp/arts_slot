@@ -40,13 +40,6 @@ body {
   margin: 10px;
 }
 
-.top-bar {
-  height: 175px;
-  background-color: white;
-}
-
-
-
 
 
 
@@ -91,11 +84,11 @@ body {
   text-align: left;
 }
 
-#project_panel {
+/*#project_panel {
   position: fixed;
   text-align: center;
-}
-
+}*/
+/*
 #form_for_character {
   border: .5px solid black;
   padding: 0;
@@ -103,7 +96,7 @@ body {
   left: 35px;
   width: 250px;
   top: 190px;
-}
+}*/
 
 #add_char_button {
   background-color: transparent;
@@ -113,14 +106,16 @@ body {
 }
 
 
-.project_header {
+/*.project_header {
   padding-bottom: 50px;
   position: fixed;
   left: 16px;
 
+}*/
+
+#project_panel {
+  text-align: center;
 }
-
-
 
 
 
@@ -187,6 +182,6 @@ body {
   background-color: rgba(220,220,220,0.5);
   position: relative;
   top: 980px;
-  min-height: 500px;
+  max-height: 500px;
   font-size: 20px;
 }
