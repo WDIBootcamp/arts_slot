@@ -2,6 +2,8 @@ class Character < ActiveRecord::Base
     belongs_to :user
     belongs_to :project
 
+    serialize :ethnicity, Hash
+
     def to_hash
       hash = {}; self.attributes.each { |k,v| hash[k] = v }
       return hash

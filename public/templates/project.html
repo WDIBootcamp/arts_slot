@@ -1,117 +1,98 @@
-<div class="panel" id="project_panel">
-
-      <div class="row">
-
-          <div ng-controller="projectsCtrl">
-              <form ng-submit="updateProject()"  ng-init="project={}">
-                <input id="project_field_title" type="text" ng-model="project.name" placeholder="film title">
-                <input id="project_field_data" type="text" ng-model="project.location" placeholder="production location">
-                <input id="project_field_data" type="text" ng-model="project.description" placeholder="description">
-              </form>
-
-          </div>
-
+<div class="project_header">
+  <form ng-submit="updateProject()"  ng-init="project={}">
+    <div class="row">
+      <div class="small-12 columns">
+        <input id="project_field_title" type="text" ng-model="project.name" placeholder="film title">
       </div>
-
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <input id="project_field_data" type="text" ng-model="project.location" placeholder="production location">
+      </div>
+    </div>
+  </form>
 </div>
 
 
+<div class="row">
 
+  <div ng-controller="charactersCtrl">
 
+      <div id="form_for_character" class="large-4 small-12 columns">
+        <form ng-submit="saveCharacter()" ng-init="character={}">
+          <input class="add_character_form" type="text" ng-model="character.name" placeholder="name">
 
+          <input type="text" ng-model="character.description" placeholder="description">
 
-
-<div ng-controller="charactersCtrl">
-
-
-  <div class="row">
-
-
-    <div id="form_for_character" class="large-4 small-12 columns">
-      <form ng-submit="saveCharacter()" ng-init="character={}">
-        <input class="add_character_form" type="text" ng-model="character.name" placeholder="name">
-
-        <input type="text" ng-model="character.description" placeholder="description">
-
-        <div class="row">
-          <div class="small-6 columns">
-            <input type="text" ng-model="character.age" placeholder="age">
-          </div>
-
-          <div class="small-6 columns">
-            <label>
-              <input type="radio" name="sex" value="male" ng-model="character.gender">
-              Male
-            </label>
-            <label>
-              <input type="radio" name="sex" value="female" ng-model="character.gender">
-              Female
-            </label>
-          </div>
-
-        </div>
-
-
-
-
-
-        <label class="checkbox-inline">
-          <input type="checkbox" ng-model="character.ethnicity.african_american" placeholder="ethnicity">African American
-        </label>
-        <label class="checkbox-inline">
-          <input type="checkbox" ng-model="character.ethnicity.asian" placeholder="ethnicity">Asian
-        </label>
-        <label class="checkbox-inline">
-          <input type="checkbox" ng-model="character.ethnicity.caucasian" placeholder="ethnicity">Caucasian
-        </label>
-        <label class="checkbox-inline">
-          <input type="checkbox" ng-model="character.ethnicity.latin" placeholder="ethnicity">Latin
-        </label>
-        <label class="checkbox-inline">
-          <input type="checkbox" ng-model="character.ethnicity.native_american" placeholder="ethnicity">Native American
-        </label>
-        <label class="checkbox-inline">
-          <input type="checkbox" ng-model="character.ethnicity.pacific_islander" placeholder="ethnicity">Pacific Islander
-        </label>
-
-        <button id="add_char_button" class="btn btn-primary">add character</button>
-      </form>
-    </div>
-
-
-
-    <div class="large-8 small-12 columns">
-        <div ng-repeat="character in characters">
-          <a href="#/projects/{{character.project_id}}/characters/{{character.id}}">
-            <div class="panel" id="character_panel">
-
-                <div class="row">
-                  <div class="small-9 columns">
-                    <div class="row">
-                      <div class="small-12 columns">
-                        <h3 class="char_name">{{character.name}}</h3>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="small-12 columns">
-                        <p>{{character.description}}</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="small-3 columns">
-                    <p>{{character.age}} years old </p>
-                  </div>
-                  <div class="small-3 columns">
-                    <p>{{character.gender}}</p>
-                  </div>
-                  <div class="small-3 columns">
-                    <p>{{character.ethnicity.asian}}</p>
-                  </div>
-                </div>
+          <div class="row">
+            <div class="small-6 columns">
+              <input type="text" ng-model="character.age" placeholder="age">
             </div>
-          </a>
-        </div>
-    </div>
+
+            <div class="small-6 columns">
+              <label>
+                <input type="radio" name="sex" value="male" ng-model="character.gender">
+                Male
+              </label>
+              <label>
+                <input type="radio" name="sex" value="female" ng-model="character.gender">
+                Female
+              </label>
+            </div>
+
+          </div>
 
 
+<!--           <label class="checkbox-inline">
+            <input type="checkbox" ng-model="character.ethnicity.african_american" placeholder="ethnicity">African American
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" ng-model="character.ethnicity.asian" placeholder="ethnicity">Asian
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" ng-model="character.ethnicity.caucasian" placeholder="ethnicity">Caucasian
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" ng-model="character.ethnicity.latin" placeholder="ethnicity">Latin
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" ng-model="character.ethnicity.native_american" placeholder="ethnicity">Native American
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" ng-model="character.ethnicity.pacific_islander" placeholder="ethnicity">Pacific Islander
+          </label> -->
+
+          <button id="add_char_button" class="btn btn-primary">add character</button>
+        </form>
+      </div>
+
+
+
+      <div id="current_chars" class="large-8 small-12 columns">
+          <div ng-repeat="character in characters">
+            <a href="#/projects/{{character.project_id}}/characters/{{character.id}}">
+              <div class="panel" id="character_panel">
+
+                  <div class="row">
+
+                      <h3 class="char_name">{{character.name}}</h3>
+
+
+                      <p>{{character.description}}</p>
+
+
+                      <p>{{character.age}}</p>
+
+                      <p>{{character.gender}}</p>
+
+                      <p>{{character.ethnicity.asian}}</p>
+
+                  </div>
+              </div>
+            </a>
+          </div>
+      </div>
+
+
+  </div>
 </div>
