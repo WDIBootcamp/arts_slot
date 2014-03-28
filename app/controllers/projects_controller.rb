@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
   def show
     respond_to do |f|
       f.html  {render :layout => false }
-      f.json  {render :json => current_user.projects.find(params[:id])}
+      f.json  {render :json => Project.find(params[:id])}
     end
   end
 

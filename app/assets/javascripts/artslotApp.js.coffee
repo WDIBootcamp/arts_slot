@@ -3,6 +3,7 @@ artSlotApp = angular.module("artSlotApp", [
   "projectRouter", "projectsService",
   "charactersService", "characterRouter"
   "userRouter", "usersService"
+  "authentication"
 ])
 
 artSlotAppCtrls = angular.module("artSlotAppCtrls", [])
@@ -27,8 +28,11 @@ angular.module('projectRouter', [
       $routeProvider.when("/projects/:id",
         templateUrl: "../templates/project.html"
         controller: "projectsCtrl"
-      ).when("/projects",
+      ).when("/",
         templateUrl: "../templates/all_projects.html"
+        controller: "projectsCtrl"
+      ).when("/usersProjects",
+        templateUrl: "../templates/project.html"
         controller: "projectsCtrl"
       )
   ])
@@ -41,7 +45,7 @@ angular.module('userRouter', [
       $routeProvider.when("/users",
         templateUrl: "../templates/all_users.html"
         controller: "usersCtrl"
-      ).when('/',
+      ).when('/signup',
         templateUrl: '../templates/registration/sign_up.html'
         controller: 'loginCtrl'
       ).when('/login',
