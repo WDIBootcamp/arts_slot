@@ -76,4 +76,5 @@ angular.module('characterRouter', [
       $routeProvider.when("/projects/:project_id/characters/:id",
         templateUrl: "../templates/character.html.erb"
         controller: "characterDetailsCtrl"
+      )
   ])
