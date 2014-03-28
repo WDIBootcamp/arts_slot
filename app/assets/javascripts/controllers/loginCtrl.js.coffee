@@ -1,7 +1,7 @@
 angular.module("artSlotAppCtrls")
   .controller("loginCtrl", [
-    "$scope", "$http", "$location", "$anchorScroll"
-      ($scope, $http, $location, $anchorScroll) ->
+    "$scope", "$http", "$location", "projectRes"
+      ($scope, $http, $location, projectRes) ->
 
         $scope.login_user =
           email: null
@@ -83,7 +83,13 @@ angular.module("artSlotAppCtrls")
                 password_confirmation: $scope.register_user.password_confirmation
             success_message: "You have been registered and logged in.  A confirmation e-mail has been sent to your e-mail address."
             error_entity: $scope.register_error
-          $location.path("/projects/:id")
+
+            # this section is here so that the producer can be taken
+            # to a new project page as soon as he registers
+            $scope.project = {}
+            project = new projectRes($scope.project)
+            newProject = project.$save ->
+                $location.path("/projects/"+project.id)
 
         $scope.register_actor = ->
           $scope.submit
@@ -154,12 +160,5 @@ angular.module("artSlotAppCtrls")
           $scope.register_user.password_confirmation = null
           return
 
-        $scope.gotoActorSignup = ->
-          $location.hash("actorSignup")
-          $anchorScroll()
-
-        $scope.gotoProducerSignup = ->
-          $loaction.hash("producerSignup")
-          $anchorScroll()
 
   ])
