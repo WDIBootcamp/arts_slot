@@ -12,7 +12,6 @@ angular.module("artSlotAppCtrls")
           $scope.users = $scope.users.concat(data);
           )
 
-
         $scope.updateUser = ->
           $scope.user.id = $routeParams.id
           userRes.update($scope.user)
@@ -34,6 +33,5 @@ angular.module("artSlotAppCtrls")
             console.log(data);
             $scope.asCharacter = data;
           )
-
 
   ])

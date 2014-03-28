@@ -50,6 +50,21 @@ angular.module('userRouter', [
       ).when('/users/:id/edit'
         templateUrl: '../templates/edit_user.html'
         controller: 'usersCtrl'
+      ).when("/users/:id",
+        templateUrl: "../templates/user.html"
+        controller: "usersCtrl"
+      )
+
+    ])
+
+angular.module('characterRouter', [
+  'ngRoute'
+])
+  .config(["$routeProvider",
+    ($routeProvider) ->
+      $routeProvider.when("/projects/:project_id/characters/:id",
+        templateUrl: "../templates/character.html.erb"
+        controller: "characterDetailsCtrl"
       )
   ])
 
