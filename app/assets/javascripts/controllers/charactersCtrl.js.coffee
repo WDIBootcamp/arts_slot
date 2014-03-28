@@ -17,7 +17,7 @@ angular.module("artSlotAppCtrls")
               $scope.characters.push(response);
 
           #empty the character's form on the view
-          $scope.character = {}
+          $scope.character = {  }
           )
 
         $scope.suggestActors = (character) ->
