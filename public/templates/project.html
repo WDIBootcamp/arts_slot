@@ -9,7 +9,7 @@
                 <input id="project_field_data" type="text" ng-model="project.description" placeholder="description">
               </form>
 
-        </div>
+          </div>
 
       </div>
 
@@ -19,86 +19,58 @@
 
 
 
+<div ng-controller="charactersCtrl">
+
+
+  <div class="row">
+
+
+    <div id="form_for_character" class="large-4 small-12 columns">
+      <form ng-submit="saveCharacter()" ng-init="character={}">
+        <input class="add_character_form" type="text" ng-model="character.name" placeholder="name">
+        <input type="text" ng-model="character.age" placeholder="age">
+        <input type="text" ng-model="character.gender" placeholder="gender">
+        <input type="text" ng-model="character.description" placeholder="description">
+        <button id="add_char_button" class="btn btn-primary">add character</button>
+      </form>
+    </div>
 
 
 
+    <div class="large-8 small-12 columns">
+        <div ng-repeat="character in characters">
+          <a href="#/projects/{{character.project_id}}/characters/{{character.id}}">
+            <div class="panel" id="character_panel">
 
-
-    <div ng-controller="charactersCtrl">
-
-
-      <div class="row">
-
-
-        <div id="form_for_character" class="large-4 small-12 columns">
-          <form ng-submit="saveCharacter()" ng-init="character={}">
-            <input class="add_character_form" type="text" ng-model="character.name" placeholder="name">
-            <input type="text" ng-model="character.age" placeholder="age">
-            <input type="text" ng-model="character.gender" placeholder="gender">
-            <input type="text" ng-model="character.description" placeholder="description">
-            <button id="add_char_button" class="btn btn-primary">add character</button>
-          </form>
-        </div>
-
-
-
-
-
-        <div class="large-8 small-12 columns">
-
-
-            <div ng-repeat="character in characters">
-              <a href="#/projects/{{character.project_id}}/characters/{{character.id}}">
-                <div class="panel" id="character_panel">
-
+                <div class="row">
+                  <div class="small-3 columns">
+                    <div class="num_of_suggestions">
+                      <p>[#] actors</p><p> available</p>
+                    </div>
+                  </div>
+                  <div class="small-9 columns">
                     <div class="row">
-                      <div class="small-3 columns">
-                        <div class="num_of_suggestions">
-                          <p>[#] actors</p><p> available</p>
-                        </div>
+                      <div class="small-12 columns">
+                        <h3 class="char_name">{{character.name}}</h3>
                       </div>
-                      <div class="small-9 columns">
-                        <div class="row">
-                          <div class="small-12 columns">
-                            <h3 class="char_name">{{character.name}}</h3>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="small-12 columns">
-                            <p>{{character.description}}</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="small-3 columns">
-                        <p>{{character.age}} years old </p>
-                      </div>
-                      <div class="small-3 columns">
-                        <p>{{character.gender}}</p>
+                    </div>
+                    <div class="row">
+                      <div class="small-12 columns">
+                        <p>{{character.description}}</p>
                       </div>
                     </div>
                   </div>
-              </a>
+                  <div class="small-3 columns">
+                    <p>{{character.age}} years old </p>
+                  </div>
+                  <div class="small-3 columns">
+                    <p>{{character.gender}}</p>
+                  </div>
+                </div>
             </div>
-
-
-
-
-
+          </a>
+        </div>
     </div>
-
-  </div>
-</div>
-
-</div>
-</div>
-
-
-
-
-
-
-
-
 
   </div>
 </div>

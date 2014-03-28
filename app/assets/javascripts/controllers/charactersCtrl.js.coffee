@@ -37,11 +37,6 @@ angular.module("artSlotAppCtrls")
             $scope.suggestions = suggestions
             console.log "Sugs:" + angular.toJson $scope.suggestions
 
-        # $scope.characterDetails = (character) ->
-        #   $scope.characterId = $routeParams.id
-        #   characterRes.query({character_id: $scope.characterId}, (data)->
-        #       $scope.characters = data;
-        #   )
 
 ])
 
