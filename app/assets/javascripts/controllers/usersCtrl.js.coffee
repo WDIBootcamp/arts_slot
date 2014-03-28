@@ -16,22 +16,23 @@ angular.module("artSlotAppCtrls")
           $scope.user.id = $routeParams.id
           userRes.update($scope.user)
 
-        $http.get("/users/"+$routeParams.id+".json").
-          success((data) ->
-            console.log(data);
-            $scope.user = data;
-          )
+        if $routeParams.p
+          $http.get("/users/"+$routeParams.id+".json").
+            success((data) ->
+              console.log(data);
+              $scope.user = data;
+            )
 
-        $http.get("/projects/"+$scope.pId+".json").
-          success((data) ->
-            console.log(data);
-            $scope.viaProject = data;
-          )
+          $http.get("/projects/"+$scope.pId+".json").
+            success((data) ->
+              console.log(data);
+              $scope.viaProject = data;
+            )
 
-        $http.get("/projects/"+$scope.pId+"/characters/"+$scope.cId+".json").
-          success((data) ->
-            console.log(data);
-            $scope.asCharacter = data;
-          )
+          $http.get("/projects/"+$scope.pId+"/characters/"+$scope.cId+".json").
+            success((data) ->
+              console.log(data);
+              $scope.asCharacter = data;
+            )
 
   ])
