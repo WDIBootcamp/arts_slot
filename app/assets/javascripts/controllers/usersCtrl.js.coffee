@@ -25,6 +25,13 @@ angular.module("artSlotAppCtrls")
             $scope.viaProject = data;
           )
 
+        $http.get("/projects/"+$scope.pId+"/characters/"+$scope.cId+".json").
+          success((data) ->
+            console.log(data);
+            $scope.asCharacter = data;
+          )
+
+
 
 
 

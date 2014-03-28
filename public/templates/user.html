@@ -3,12 +3,11 @@
       <div class="row">
         <div class="small-12 medium-8 columns">
           <h3 class="char_name">{{user.name}}</h3>
-          <p>{{viaProject.name}}</p>
-          <p>{{cId}}</p>
+          <p></p>
         </div>
         <div class="small-12 medium-4 columns">
 <!--           <%= button_to "Invite to audition", want_to_path(@intention), :method=>:post, :class => "btn btn-primary btn-lg" %> -->
-          <a href="#" id="invite_button" class="button">Invite to audition</a>
+          <a href="#" id="invite_button" class="button">Invite to audition for <br> {{viaProject.name}} as {{asCharacter.name}} </a>
         </div>
       </div>
 
