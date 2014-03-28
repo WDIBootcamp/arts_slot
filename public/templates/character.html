@@ -19,15 +19,14 @@
 
 
 
-
+Route: {{projectId}} <br>
+Char: {{characterId}}
 
 
 <div class="row" data-equalizer>
   <div ng-repeat="sug in character.suggestions">
 
-
-
-          <a href="#/users/{{sug.id}}">
+          <a href="#/users/{{sug.id}}?p={{projectId}}&c={{characterId}}">
             <div id="actor_card" class="large-4 columns panel" data-equalizer-watch>
               <img class="actor_pic" src="http://i.huffpost.com/gen/920563/thumbs/o-BEST-ACTOR-GOLDEN-GLOBES-facebook.jpg">
 

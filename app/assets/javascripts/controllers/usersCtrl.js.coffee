@@ -16,5 +16,11 @@ angular.module("artSlotAppCtrls")
             $scope.user = data;
           )
 
+        $scope.pId = $routeParams.p
+        # $scope.pName = pId.name
+        $scope.cId = $routeParams.c
+
+
+
 
   ])

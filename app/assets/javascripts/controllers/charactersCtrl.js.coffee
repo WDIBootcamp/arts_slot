@@ -48,7 +48,9 @@ angular.module("artSlotAppCtrls")
   .controller("characterDetailsCtrl", [
     "$scope", "characterRes", "$routeParams", "$http"
       ($scope, characterRes, $routeParams, $http) ->
+        console.log angular.toJson $routeParams
         $scope.characterId = $routeParams.id
+        $scope.projectId = $routeParams.project_id
 
         $http.get("/projects/"+$routeParams.project_id+"/characters/"+$scope.characterId+".json").
           success((data) ->

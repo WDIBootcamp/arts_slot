@@ -26,6 +26,7 @@
   height: 60px;
   border: 0px;
   box-shadow: none;
+  background-color: transparent;
 /*  text-decoration:underline;*/
 
 }
@@ -36,6 +37,7 @@
   height: 30px;
   border: 0px;
   box-shadow: none;
+  background-color: transparent;
 }
 
 #new_char_button {
