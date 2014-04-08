@@ -145,7 +145,7 @@ angular.module("artSlotAppCtrls")
                 parameters.error_entity.message = data.error
               else
                 parameters.error_entity.message = "Success, but with an unexpected success code, potentially a server error, please report via support channels as this indicates a code defect.  Server response was: " + JSON.stringify(data)
-            callback data
+            if callback? then callback data
           ).error((data, status) ->
             if status is 422
               parameters.error_entity.errors = data.errors
