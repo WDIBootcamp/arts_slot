@@ -1,0 +1,39 @@
+$theme-color: #01B6AD;
+
+.centered-text {
+  margin: 0 auto;
+  font: 100 50px/1.0 'Just Another Hand', Helvetica, sans-serif;
+
+}
+
+.message {
+  padding:50px 50px 100px 50px;
+}
+
+.centered-text fieldset {
+  margin-top:25%;
+  box-shadow: rgba(0,0,0,.08) 0 1px 5px;
+  border-left: 6px solid $theme-color;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+.big-input .gender-text {
+  color: rgba(0, 0, 0, 0.35);
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.714em;
+  padding: 1em 2em;
+  border: 0px;
+}
+
+.big-input .column:hover {
+  border-left: 3px solid $theme-color;
+
+}
+
+.big-input .column:active {
+  background-color: $theme-color;
+}

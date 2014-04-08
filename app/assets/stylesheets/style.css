@@ -7,29 +7,13 @@ body {
   border: 1px solid black;
 }*/
 
-input[type=text] {
+.panel input[type=text] {
   border-top: none;
   border-right: none;
   border-left: none;
   box-shadow: none;
   background-color: transparent;
 }
-
-input:focus {
-  outline: none;
-}
-
-
-html {
-  height: 100%;
-  width: 100%;
-}
-
-body {
-  height: 100%;
-  width: 100%;
-}
-
 
 .char_name {
   margin-top: 30px;
@@ -39,8 +23,6 @@ body {
 .char_name {
   margin: 10px;
 }
-
-
 
 
 
@@ -179,9 +161,19 @@ body {
 }
 
 .icy_actor_details {
-  background-color: rgba(220,220,220,0.5);
+  background-color: rgba(225,234,253,0.5);
   position: relative;
   top: 980px;
   max-height: 500px;
   font-size: 20px;
+}
+
+.card {
+  width: 50%;
+  margin-left:15%;
+  background-color: rgba(225,234,253,0.8);
+  box-shadow: rgba(0,0,0,.08) 0 1px 5px;
+  padding: 20px 10px 20px 10px;
+  margin-bottom: 15px;
+  text-align: center;
 }

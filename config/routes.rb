@@ -6,4 +6,5 @@ CastingSlotMachine::Application.routes.draw do
     resources :characters
   end
   resources :users, only: [:show, :index, :edit, :update]
+  get '/usersProject', to: 'projects#latest_project' 
 end

@@ -1,5 +1,5 @@
 class CharactersController < ApplicationController
-  before_filter :authenticate_user!
+  # before_filter :authenticate_user!
 
   def index
     characters = Project.find(params[:project_id]).characters
