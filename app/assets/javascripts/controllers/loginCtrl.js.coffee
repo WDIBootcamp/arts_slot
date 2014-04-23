@@ -73,7 +73,7 @@ angular.module("artSlotAppCtrls")
             error_entity: $scope.login_error
 
         $scope.register_producer = ->
-          $scope.submit
+          $scope.submit(
             method: "POST"
             url: "/users.json"
             data:
@@ -83,13 +83,17 @@ angular.module("artSlotAppCtrls")
                 password_confirmation: $scope.register_user.password_confirmation
             success_message: "You have been registered and logged in.  A confirmation e-mail has been sent to your e-mail address."
             error_entity: $scope.register_error
+            $scope.redirectToNewProject
+            )
 
-            # this section is here so that the producer can be taken
-            # to a new project page as soon as he registers
-            $scope.project = {}
-            project = new projectRes($scope.project)
-            newProject = project.$save ->
-                $location.path("/projects/"+project.id)
+        # this method is here so that the producer can be taken
+        # to a new project page as soon as he registers
+        $scope.redirectToNewProject = ->
+          $scope.project = {}
+          project = new projectRes($scope.project)
+          newProject = project.$save ->
+              $location.path("/projects/"+project.id)
+
 
         $scope.register_actor = ->
           $scope.submit(

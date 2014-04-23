@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   def index
     respond_to do |f|
       f.html  {render :layout => false }
-      f.json  {render :json => current_merchant.projects}
+      f.json  {render :json => current_user.projects}
     end
   end
 
@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    project = Project.create(name: "new Movie", location: "0", description: "Romantic, indie, hip, action comedy")
+    project = current_user.projects.create(name: "new Movie", location: "0", description: "Romantic, indie, hip, action comedy")
 
     respond_to do |f|
         f.html {redirect_to projects_path}
