@@ -5,6 +5,10 @@ angular.module("artSlotAppCtrls")
 
         $scope.projects = []
 
+        projectRes.query({project_id: $routeParams.id}, (data)->
+            $scope.current_project = data;
+        )
+
         projectRes.query((data) ->
             console.log(data);
             $scope.projects = data;
@@ -17,10 +21,9 @@ angular.module("artSlotAppCtrls")
               $location.path("/projects/"+project.id)
 
         $scope.updateProject = ->
-          console.log $scope.project
           $scope.project.id = $routeParams.id
           console.log  projectRes.update($scope.project)
-          
+
 
 
   ])

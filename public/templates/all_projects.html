@@ -3,19 +3,24 @@
   <div class="small-12 large-12 columns">
 
     <div ng-controller="loginCtrl">
-      <button ng-click="logout()" class="btn btn-primary" >Logout</button>
+      <button ng-click="logout()" class="logout-button">Logout</button>
     </div>
 
     <!--<br>
         <div>Movies near <input ng-model="search.location" placeholder="zip code"> </div>
         <br> -->
+    </div>
 
-    <button ng-click="createProject()"class="btn btn-primary">Start a Movie</button>
+  <div class= "small-12 small-centered columns">
+    <button ng-click="createProject()"class="startmovie-button">Start a Movie</button>
+  </div>
+
+  <div class="small-12 large-12 columns">
 
     <div ng-repeat="project in projects | filter:{location: search.location}">
 
       <div class="panel">
-        <a href="/#/projects/{{project.id}}"><p> {{project.name}}</p></a>
+        <a href="/#/projects/{{project.id}}"><p>{{project.name}}</p></a>
       </div>
 
     </div>

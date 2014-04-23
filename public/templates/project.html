@@ -1,19 +1,18 @@
-<site-header back="back"></site-header>
+<div class="go_back"><a href="#"><</a></div>
 
 <div class="row">
   <div class="small-12 columns">
     <div class="panel" id="project_panel">
       <form ng-submit="updateProject()"  ng-init="project={}">
-        <div class="row">
-          <div class="small-12 columns">
-            <input id="project_field_title" type="text" ng-model="project.name" placeholder="film title">
-          </div>
-        </div>
-        <div class="row">
-          <div class="small-12 columns">
-            <input id="project_field_data" type="text" ng-model="project.location" placeholder="production location">
-          </div>
-        </div>
+        <div class="row"><div class="small-12 columns">
+          <input id="project_field_title" type="text" ng-model="project.name" placeholder="film title">
+        </div></div>
+        <div class="row"><div class="small-12 columns">
+          <input id="project_field_data" type="text" ng-model="project.location" placeholder="production location">
+        </div></div>
+        <div class="row"><div class="small-2 medium-1 columns">
+          <input type="submit" id="submit" class="update_project" value="update" />
+        </div></div>
       </form>
     </div>
   </div>
