@@ -1,0 +1,223 @@
+$theme-color: #01B6AD;
+
+body {
+  background-color: rgba(242, 242, 242, 1);
+}
+
+
+/*.panel {
+  border: 1px solid black;
+}*/
+
+.panel input[type=text] {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.char_name {
+  margin-top: 30px;
+  font-size: 35px;
+}
+
+.char_name {
+  margin: 10px;
+}
+
+
+
+/* PROJECT PAGE */
+
+.logout-button {
+  background-color: transparent;
+  color: $theme-color;
+  text-align: left;
+}
+
+.logout-button:hover {
+  background-color: $theme-color;
+  color: white;
+  text-align: left;
+}
+
+.startmovie-button {
+  background-color: transparent;
+  border: 1px solid black;
+  color: black;
+  margin: 0 auto;
+}
+
+.startmovie-button:hover {
+  background-color: $theme-color;
+  border: 1px solid black;
+  color: white;
+}
+
+#project_field_title {
+  text-align: left;
+  font-size: 35px;
+  height: 60px;
+  border: 0px;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+#project_field_data {
+  text-align: left;
+  font-size: 35px;
+  height: 60px;
+  border: 0px;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+#new_char_button {
+  background-color: white;
+  color: black;
+  letter-spacing:10px
+}
+
+#char_name {
+  text-align: center;
+}
+
+.add_character {
+/*  padding: 10px;*/
+  border: .5px solid black;
+}
+
+#character_panel {
+  background-color : transparent;
+  text-align: left;
+}
+
+/*#project_panel {
+  position: fixed;
+  text-align: center;
+}*/
+/*
+#form_for_character {
+  border: .5px solid black;
+  padding: 0;
+  position: fixed;
+  left: 35px;
+  width: 250px;
+  top: 190px;
+}*/
+
+#add_char_button {
+  background-color: transparent;
+  border: 1px solid black;
+  color: black;
+
+}
+
+.update_project {
+  background-color: transparent;
+  border: 1px solid black;
+  color: black;
+
+}
+
+.go_back {
+
+  position: absolute;
+
+  a {
+    font-size: 5rem;
+    padding: 0 0 0 20px;
+  }
+}
+
+
+/*.project_header {
+  padding-bottom: 50px;
+  position: fixed;
+  left: 16px;
+
+}*/
+
+#project_panel {
+  text-align: center;
+}
+
+
+
+
+
+
+/* CHARACTER PAGE */
+
+#actor_card {
+/*  border: 1px solid black;*/
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 0;
+  max-width: 30%;
+}
+
+.actor_card_stats {
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+  line-height: 130%;
+}
+
+.actor_pic {
+  width: 100%;
+}
+
+#character_panel {
+  text-align: center;
+}
+
+
+
+
+
+/* ACTOR PAGE */
+
+#acting_video {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#actor_panel {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+}
+
+#invite_button {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.actor_clip {
+  width: 100%;
+}
+
+.icy_actor_details {
+  background-color: rgba(225,234,253,0.5);
+  position: relative;
+  top: 980px;
+  max-height: 500px;
+  font-size: 20px;
+}
+
+.card {
+  width: 50%;
+  margin-left:15%;
+  background-color: rgba(225,234,253,0.8);
+  box-shadow: rgba(0,0,0,.08) 0 1px 5px;
+  padding: 20px 10px 20px 10px;
+  margin-bottom: 15px;
+  text-align: center;
+}
