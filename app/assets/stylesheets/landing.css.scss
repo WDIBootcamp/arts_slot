@@ -64,18 +64,36 @@ fieldset {
   width: 100%;
 }
 
-.big-input input[type="text"], input[type="password"] {
-  font-weight: normal;
-  -webkit-font-smoothing: antialiased;
-  font-size: 1.714em;
-  padding: 1em 2em;
-  border: 0px;
-  background-color: transparent;
-  box-shadow: none;
-  -webkit-transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
-  -moz-transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
-  -ms-transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
-  -o-transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+.big-input {
+
+  input[type="text"] {
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.714em;
+    padding: 1em 2em;
+    border: 0px;
+    background-color: transparent;
+    box-shadow: none;
+    -webkit-transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+    -moz-transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+    -ms-transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+    -o-transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+  }
+  input[type="password"] {
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.714em;
+    margin: 1em 0;
+    padding: 0 2em;
+    border: 0px;
+    background-color: transparent;
+    box-shadow: none;
+    -webkit-transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+    -moz-transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+    -ms-transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+    -o-transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+  }
+
 }
 
 .big-input input:hover {

@@ -1,10 +1,10 @@
 class ProjectsController < ApplicationController
-  # before_filter :authenticate_user!
+  before_filter :authenticate_user!
 
   def index
     respond_to do |f|
       f.html  {render :layout => false }
-      f.json  {render :json => Project.all}
+      f.json  {render :json => current_merchant.projects}
     end
   end
 
